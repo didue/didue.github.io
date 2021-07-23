@@ -1,3 +1,9 @@
+---
+title : Java8 스트림(Stream)API - map/filter/distinct
+date : 2021-07-23
+tags : ['Java', 'Java8', 'Stream']
+keywords : ['Java', 'Java8', 'Stream']
+---
 
 Java8에서 선보인 Stream API를 근래 업무에서 너무 편하게 잘쓰고있어서 정리해보려 한다.
 
