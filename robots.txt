@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://didue.github.io/didue.github.io/sitemap.xml
+Host: https://didue.github.io
