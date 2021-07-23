@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[D.log | Feed]]></title><description><![CDATA[Blog Description]]></description><link>https://didue.github.io/didue.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 23 Jul 2021 07:10:40 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><description><![CDATA[Java8에서 선보인 Stream API를 근래 업무에서 너무 편하게 잘쓰고있어서 정리해보려 한다. 필요의 순간에 아주 유용하게 쓸 수 있는 API니 잘 알아두자! Java Stream 기존에 자바 Collection이나 Array의 요소를 가공할 …]]></description><link>https://didue.github.io/didue.github.io/java-stream-api/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/java-stream-api/</guid><content:encoded>&lt;p&gt;Java8에서 선보인 Stream API를 근래 업무에서 너무 편하게 잘쓰고있어서 정리해보려 한다.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[D.log | Feed]]></title><description><![CDATA[Blog Description]]></description><link>https://didue.github.io/didue.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 23 Jul 2021 08:05:15 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><description><![CDATA[Java8에서 선보인 Stream API를 근래 업무에서 너무 편하게 잘쓰고있어서 정리해보려 한다. 필요의 순간에 아주 유용하게 쓸 수 있는 API니 잘 알아두자! Java Stream 기존에 자바 Collection이나 Array의 요소를 가공할 …]]></description><link>https://didue.github.io/didue.github.io/java-stream-api/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/java-stream-api/</guid><content:encoded>&lt;p&gt;Java8에서 선보인 Stream API를 근래 업무에서 너무 편하게 잘쓰고있어서 정리해보려 한다.&lt;/p&gt;
 &lt;p&gt;필요의 순간에 아주 유용하게 쓸 수 있는 API니 잘 알아두자!&lt;/p&gt;
 &lt;h2 id=&quot;java-stream&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#java-stream&quot; aria-label=&quot;java stream permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Java Stream&lt;/h2&gt;
 &lt;p&gt;기존에 자바 Collection이나 Array의 요소를 가공할 때는 &lt;code class=&quot;language-text&quot;&gt;loop(for, foreach)&lt;/code&gt;를 사용해서 요소를 골라내는 작업을 했다면, &lt;code class=&quot;language-text&quot;&gt;Stream&lt;/code&gt;은 &lt;strong&gt;람다형(함수형 인터페이스)&lt;/strong&gt; 으로 간단하게 요소를 처리할 수 있도록 한다&lt;/p&gt;
@@ -177,7 +177,54 @@ public class TransCoord {
 좌표변환 코드를 보면 세상짧고 별거없어 보이는 코드이지만....
 &lt;p&gt;저 라이브러리와 코드를 찾기위해 몇번이고 구글을 떠돌던 며칠전의 저와 같은 모습을 하고 계실 또 다른 분들이 도움이 되셨기를...!🙋‍♀️&lt;/p&gt;
 &lt;p&gt;&lt;br/&gt;&lt;br/&gt;
-+) 이 글은 &lt;a href=&quot;https://fascinate-zsoo.tistory.com/24&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;여기(이전 블로그)&lt;/a&gt;에서 옮겨왔습니다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[(TIL#2) Console 제대로 알고 쓰기 (with 드림코딩)]]></title><description><![CDATA[consolelog
++) 이 글은 &lt;a href=&quot;https://fascinate-zsoo.tistory.com/24&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;여기(이전 블로그)&lt;/a&gt;에서 옮겨왔습니다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[(TIL#1) 모던Javascript - null 병합연산자 ??]]></title><description><![CDATA[null 병합 연산자 '??' 
+null
+
+null 병합 연산자 를 사용하면 짧은 문법으로 여러 연산자 중 그 값이 '확정'되어 있는 변수를 찾을 수 있습니다. 
+
+ 변수의 값은 변수 가 도 아니고  가 아니면 가, 
+그렇지 않을 경우는 가 되도록 …]]></description><link>https://didue.github.io/didue.github.io/TIL/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/TIL/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;null-병합-연산자-&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#null-%EB%B3%91%ED%95%A9-%EC%97%B0%EC%82%B0%EC%9E%90-&quot; aria-label=&quot;null 병합 연산자  permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;null 병합 연산자 &apos;??&apos;&lt;/h2&gt;
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;
+&lt;img src=&quot;https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;#x26;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F995C434C5C07CDA015&quot; alt=&quot;null&quot;&gt;
+&lt;br/&gt;&lt;br/&gt;
+null 병합 연산자 &lt;code class=&quot;language-text&quot;&gt;??&lt;/code&gt;를 사용하면 짧은 문법으로 여러 연산자 중 그 값이 &apos;확정&apos;되어 있는 변수를 찾을 수 있습니다.
+&lt;br/&gt;&lt;br/&gt;
+&lt;code class=&quot;language-text&quot;&gt;x&lt;/code&gt; 변수의 값은 변수 &lt;code class=&quot;language-text&quot;&gt;a&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;null&lt;/code&gt;도 아니고  &lt;code class=&quot;language-text&quot;&gt;undefined&lt;/code&gt;가 아니면 &lt;code class=&quot;language-text&quot;&gt;a&lt;/code&gt;가,
+그렇지 않을 경우는 &lt;code class=&quot;language-text&quot;&gt;b&lt;/code&gt;가 되도록 하고자 할 때&lt;br/&gt;
+우리는 구식 문법으로 아래와 코드를 작성했습니다.
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//old
+//if~else문
+let x;
+if(a !== null &amp;amp;&amp;amp; a!== undefined){
+    x = a;
+}else {
+    x = b;
+}
+
+or 
+
+//삼항연산자
+let x = (a !== null &amp;amp;&amp;amp; a!== undefined)? a : b;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;br/&gt;
+`if~else` 문 또는 비교연산자와 논리연산자를 사용하면 코드길이가 길어져 가독성이 떨어지게 됩니다.&lt;br/&gt;
+이 때, null 병합연산자 `??` 사용해서 코드를 작성하면 이렇게 표현할 수 있습니다. &lt;br/&gt;
+&lt;br/&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//new
+let x = a ?? b;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;h3 id=&quot;연산자-우선순위&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%97%B0%EC%82%B0%EC%9E%90-%EC%9A%B0%EC%84%A0%EC%88%9C%EC%9C%84&quot; aria-label=&quot;연산자 우선순위 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;연산자 우선순위&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;??&lt;/code&gt; 연산자는 &lt;code class=&quot;language-text&quot;&gt;5번째 우선순위&lt;/code&gt;로 꽤 낮습니다.
+그렇기 때문에 연산자가 복잡한 표현식안에서는 &lt;code class=&quot;language-text&quot;&gt;괄호&lt;/code&gt;를 사용하여 표현하는 방법이 좋습니다. &lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;??&lt;/code&gt;연산자는 javascript 스펙에 추가된 지 얼마 안 된 문법으로, 구식 브라우저(&lt;del&gt;인터넷 익스플로러 라거나....IE라거나...&lt;/del&gt;)에서는 바벨과 같은 폴리필이 필요합니다.&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;또한 &lt;code class=&quot;language-text&quot;&gt;??&lt;/code&gt; 연산자에는 자바스크립트 언어에서 규정한 &lt;code class=&quot;language-text&quot;&gt;제약사항&lt;/code&gt;이 있습니다.&lt;br/&gt;
+&lt;b&gt;안전성 관련 이슈 때문에 &lt;code class=&quot;language-text&quot;&gt;??&lt;/code&gt;연산자는 &lt;code class=&quot;language-text&quot;&gt;&amp;amp;&amp;amp;(AND)&lt;/code&gt;나 &lt;code class=&quot;language-text&quot;&gt;||(OR)&lt;/code&gt;연산자와 함께 사용할수 없습니다.&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//Syntax Error : Uxexpected token &amp;#39;??&amp;#39;
+let x = 1 &amp;amp;&amp;amp; 2 ?? 3;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br/&gt;제약을 피하려면 아래 예시처럼 &lt;code class=&quot;language-text&quot;&gt;괄호&lt;/code&gt;를 사용할 수 있습니다. &lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let x = (1 &amp;amp;&amp;amp; 2) ?? 3;
+console.log(x);         //2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[(TIL#2) Console 제대로 알고 쓰기 (with 드림코딩)]]></title><description><![CDATA[consolelog
 
 드림코딩 엘리님의 유튜브를 보고 기억하기위해 적어두는 TIL
  Console 제대로 알고쓰기 콘솔로그의 기본 로그레벨에 따른   할 때만 로그를 출력하고 싶을 경우  를 더 스마트하게 가독성있게 출력하기  수행시간 측정 하기  …]]></description><link>https://didue.github.io/didue.github.io/TIL-console/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/TIL-console/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;#x26;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FRL3DB%2Fbtq8UeXRCxu%2FRwi4Bc26JFQtm7wCDnPPy0%2Fimg.gif&quot; alt=&quot;consolelog&quot;&gt;
@@ -249,54 +296,44 @@ f1();&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id=&quot;출처&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%B6%9C%EC%B2%98&quot; aria-label=&quot;출처 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;출처&lt;/h3&gt;
 &lt;p&gt;- MDN : Console &lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/API/Console&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://developer.mozilla.org/ko/docs/Web/API/Console&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;- Node.js : Console &lt;a href=&quot;https://nodejs.org/dist/latest-v14.x/docs/api/console.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://nodejs.org/dist/latest-v14.x/docs/api/console.html&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;- 드림코딩 유튜브 &lt;a href=&quot;https://youtu.be/KxsVV5jbJe4&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://youtu.be/KxsVV5jbJe4&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[(TIL#1) 모던Javascript - null 병합연산자 ??]]></title><description><![CDATA[null 병합 연산자 '??' 
-null
-
-null 병합 연산자 를 사용하면 짧은 문법으로 여러 연산자 중 그 값이 '확정'되어 있는 변수를 찾을 수 있습니다. 
-
- 변수의 값은 변수 가 도 아니고  가 아니면 가, 
-그렇지 않을 경우는 가 되도록 …]]></description><link>https://didue.github.io/didue.github.io/TIL/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/TIL/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;null-병합-연산자-&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#null-%EB%B3%91%ED%95%A9-%EC%97%B0%EC%82%B0%EC%9E%90-&quot; aria-label=&quot;null 병합 연산자  permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;null 병합 연산자 &apos;??&apos;&lt;/h2&gt;
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;
-&lt;img src=&quot;https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;#x26;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F995C434C5C07CDA015&quot; alt=&quot;null&quot;&gt;
-&lt;br/&gt;&lt;br/&gt;
-null 병합 연산자 &lt;code class=&quot;language-text&quot;&gt;??&lt;/code&gt;를 사용하면 짧은 문법으로 여러 연산자 중 그 값이 &apos;확정&apos;되어 있는 변수를 찾을 수 있습니다.
-&lt;br/&gt;&lt;br/&gt;
-&lt;code class=&quot;language-text&quot;&gt;x&lt;/code&gt; 변수의 값은 변수 &lt;code class=&quot;language-text&quot;&gt;a&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;null&lt;/code&gt;도 아니고  &lt;code class=&quot;language-text&quot;&gt;undefined&lt;/code&gt;가 아니면 &lt;code class=&quot;language-text&quot;&gt;a&lt;/code&gt;가,
-그렇지 않을 경우는 &lt;code class=&quot;language-text&quot;&gt;b&lt;/code&gt;가 되도록 하고자 할 때&lt;br/&gt;
-우리는 구식 문법으로 아래와 코드를 작성했습니다.
-&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//old
-//if~else문
-let x;
-if(a !== null &amp;amp;&amp;amp; a!== undefined){
-    x = a;
-}else {
-    x = b;
-}
-
-or 
-
-//삼항연산자
-let x = (a !== null &amp;amp;&amp;amp; a!== undefined)? a : b;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;br/&gt;
-`if~else` 문 또는 비교연산자와 논리연산자를 사용하면 코드길이가 길어져 가독성이 떨어지게 됩니다.&lt;br/&gt;
-이 때, null 병합연산자 `??` 사용해서 코드를 작성하면 이렇게 표현할 수 있습니다. &lt;br/&gt;
-&lt;br/&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//new
-let x = a ?? b;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;- 드림코딩 유튜브 &lt;a href=&quot;https://youtu.be/KxsVV5jbJe4&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://youtu.be/KxsVV5jbJe4&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Javascript/jQuery Selector에서 와일드카드 사용하기]]></title><description><![CDATA[또는 에서 을 사용할 때
+와일드카드를 이용하여 패턴으로 탐색하고 싶은 경우엔 아래와 같이 사용해보자!  ~로 시작하는 요소   ~로 끝나는 요소  ~를 포함하는 요소  아래 이미지는 를 사용하여 지난 프로젝트의 레거시 코드를 아주 조금 리팩토링했었던…]]></description><link>https://didue.github.io/didue.github.io/javascript-wildcard/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/javascript-wildcard/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;JavaScript&lt;/code&gt; 또는 &lt;code class=&quot;language-text&quot;&gt;jQuery&lt;/code&gt;에서 &lt;code class=&quot;language-text&quot;&gt;querySelectorAll()&lt;/code&gt;을 사용할 때&lt;br/&gt;
+와일드카드를 이용하여 &lt;em&gt;패턴으로 탐색&lt;/em&gt;하고 싶은 경우엔 아래와 같이 사용해보자!&lt;/p&gt;
 &lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;h3 id=&quot;연산자-우선순위&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%97%B0%EC%82%B0%EC%9E%90-%EC%9A%B0%EC%84%A0%EC%88%9C%EC%9C%84&quot; aria-label=&quot;연산자 우선순위 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;연산자 우선순위&lt;/h3&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;??&lt;/code&gt; 연산자는 &lt;code class=&quot;language-text&quot;&gt;5번째 우선순위&lt;/code&gt;로 꽤 낮습니다.
-그렇기 때문에 연산자가 복잡한 표현식안에서는 &lt;code class=&quot;language-text&quot;&gt;괄호&lt;/code&gt;를 사용하여 표현하는 방법이 좋습니다. &lt;br/&gt;
-&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;??&lt;/code&gt;연산자는 javascript 스펙에 추가된 지 얼마 안 된 문법으로, 구식 브라우저(&lt;del&gt;인터넷 익스플로러 라거나....IE라거나...&lt;/del&gt;)에서는 바벨과 같은 폴리필이 필요합니다.&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;또한 &lt;code class=&quot;language-text&quot;&gt;??&lt;/code&gt; 연산자에는 자바스크립트 언어에서 규정한 &lt;code class=&quot;language-text&quot;&gt;제약사항&lt;/code&gt;이 있습니다.&lt;br/&gt;
-&lt;b&gt;안전성 관련 이슈 때문에 &lt;code class=&quot;language-text&quot;&gt;??&lt;/code&gt;연산자는 &lt;code class=&quot;language-text&quot;&gt;&amp;amp;&amp;amp;(AND)&lt;/code&gt;나 &lt;code class=&quot;language-text&quot;&gt;||(OR)&lt;/code&gt;연산자와 함께 사용할수 없습니다.&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//Syntax Error : Uxexpected token &amp;#39;??&amp;#39;
-let x = 1 &amp;amp;&amp;amp; 2 ?? 3;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br/&gt;제약을 피하려면 아래 예시처럼 &lt;code class=&quot;language-text&quot;&gt;괄호&lt;/code&gt;를 사용할 수 있습니다. &lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let x = (1 &amp;amp;&amp;amp; 2) ?? 3;
-console.log(x);         //2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[(Postgresql) UPSERT 사용하기]]></title><description><![CDATA[List가 없이 에디터 하나로 insert/update를 해야하는 게시판을 작성하는 업무가 있어서 찾아보다가 라는 것을 알게 되었다!  는 일종의 문 같은 개념으로(postgresql은 merge가 없음......)
+&lt;p&gt;&lt;strong&gt;~로 시작하는 요소&lt;/strong&gt;  &lt;code class=&quot;language-text&quot;&gt;^&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//JavaScript
+document.querySelectorAll(&amp;quot;[id^=&amp;#39;abc&amp;#39;]&amp;quot;);
+
+//jQuery
+$(&amp;quot;[id^=&amp;#39;abc&amp;#39;]&amp;quot;);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;~로 끝나는 요소&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;$&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//JavaScript
+document.querySelectorAll(&amp;quot;[id$=&amp;#39;abc&amp;#39;]&amp;quot;);
+
+//jQuery
+$(&amp;quot;[id$=&amp;#39;abc&amp;#39;]&amp;quot;);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;~를 포함하는 요소&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;*&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//JavaScript
+document.querySelectorAll(&amp;quot;[id*=&amp;#39;abc&amp;#39;]&amp;quot;);
+
+//jQuery
+$(&amp;quot;[id*=&amp;#39;abc&amp;#39;]&amp;quot;);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;hr&gt;
+&lt;br/&gt;
+&lt;p&gt;아래 이미지는 &lt;code class=&quot;language-text&quot;&gt;와일드카드&lt;/code&gt;를 사용하여 지난 프로젝트의 레거시 코드를 아주 조금 리팩토링했었던 코드이다. 👻&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;&lt;img src=&quot;https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;#x26;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FkVCvG%2FbtqE81F1Iox%2Fp3kVAWDJNMLRWXzQR5WxKk%2Fimg.png&quot; alt=&quot;null&quot;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;50라인정도가 되는 하드코딩(?)스러운 코드를 단 8줄로 리팩토링했다. 개인적으론 라인이 줄어듦으로써 이전보다 가독성도 좋아졌다고 생각한다.
+&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;한가지 아쉬웠던것은 Element의 ID를 좀 더 상세한 패턴있게 작명했더라면 (Cnt라는 단어만으로는 다른데에서도 자주 사용되고 있기때문에 좋지못했다....)
+&lt;em&gt;어쩌면 한줄로도 가능하지않았을까&lt;/em&gt; 하는 약간의 아쉬움..이 좀 남는다🤔&lt;/p&gt;
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;hr/&gt;
+&lt;br/&gt;&lt;br/&gt;
++) 이 글은 [여기(이전 블로그)](https://fascinate-zsoo.tistory.com/24)에서 옮겨왔습니다.🙋‍♀️
+&lt;br/&gt;&lt;br/&gt;</content:encoded></item><item><title><![CDATA[(Postgresql) UPSERT 사용하기]]></title><description><![CDATA[List가 없이 에디터 하나로 insert/update를 해야하는 게시판을 작성하는 업무가 있어서 찾아보다가 라는 것을 알게 되었다!  는 일종의 문 같은 개념으로(postgresql은 merge가 없음......)
 행이 없으면(존재하지않으면) IN…]]></description><link>https://didue.github.io/didue.github.io/postgresql-upsert/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/postgresql-upsert/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;List가 없이 에디터 하나로 insert/update를 해야하는 게시판을 작성하는 업무가 있어서 찾아보다가 &lt;code class=&quot;language-text&quot;&gt;UPSERT&lt;/code&gt;라는 것을 알게 되었다!&lt;/p&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;UPSERT&lt;/code&gt; 는 일종의 &lt;code class=&quot;language-text&quot;&gt;MERGE&lt;/code&gt;문 같은 개념으로(&lt;del&gt;postgresql은 merge가 없음......&lt;/del&gt;)
 &lt;strong&gt;행이 없으면(존재하지않으면) INSERT하고 존재하면 UPDATE하는 문법&lt;/strong&gt;이다.&lt;/p&gt;
@@ -376,44 +413,7 @@ DO
 &lt;h3 id=&quot;참고&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%B0%B8%EA%B3%A0&quot; aria-label=&quot;참고 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;참고&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.postgresqltutorial.com/postgresql-upsert/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;PostgresQL API Document&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Javascript/jQuery Selector에서 와일드카드 사용하기]]></title><description><![CDATA[또는 에서 을 사용할 때
-와일드카드를 이용하여 패턴으로 탐색하고 싶은 경우엔 아래와 같이 사용해보자!  ~로 시작하는 요소   ~로 끝나는 요소  ~를 포함하는 요소  아래 이미지는 를 사용하여 지난 프로젝트의 레거시 코드를 아주 조금 리팩토링했었던…]]></description><link>https://didue.github.io/didue.github.io/javascript-wildcard/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/javascript-wildcard/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;JavaScript&lt;/code&gt; 또는 &lt;code class=&quot;language-text&quot;&gt;jQuery&lt;/code&gt;에서 &lt;code class=&quot;language-text&quot;&gt;querySelectorAll()&lt;/code&gt;을 사용할 때&lt;br/&gt;
-와일드카드를 이용하여 &lt;em&gt;패턴으로 탐색&lt;/em&gt;하고 싶은 경우엔 아래와 같이 사용해보자!&lt;/p&gt;
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;~로 시작하는 요소&lt;/strong&gt;  &lt;code class=&quot;language-text&quot;&gt;^&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//JavaScript
-document.querySelectorAll(&amp;quot;[id^=&amp;#39;abc&amp;#39;]&amp;quot;);
-
-//jQuery
-$(&amp;quot;[id^=&amp;#39;abc&amp;#39;]&amp;quot;);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;~로 끝나는 요소&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;$&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//JavaScript
-document.querySelectorAll(&amp;quot;[id$=&amp;#39;abc&amp;#39;]&amp;quot;);
-
-//jQuery
-$(&amp;quot;[id$=&amp;#39;abc&amp;#39;]&amp;quot;);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;~를 포함하는 요소&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;*&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//JavaScript
-document.querySelectorAll(&amp;quot;[id*=&amp;#39;abc&amp;#39;]&amp;quot;);
-
-//jQuery
-$(&amp;quot;[id*=&amp;#39;abc&amp;#39;]&amp;quot;);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;br/&gt;
-&lt;hr&gt;
-&lt;br/&gt;
-&lt;p&gt;아래 이미지는 &lt;code class=&quot;language-text&quot;&gt;와일드카드&lt;/code&gt;를 사용하여 지난 프로젝트의 레거시 코드를 아주 조금 리팩토링했었던 코드이다. 👻&lt;/p&gt;
-&lt;br/&gt;
-&lt;p&gt;&lt;img src=&quot;https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;#x26;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FkVCvG%2FbtqE81F1Iox%2Fp3kVAWDJNMLRWXzQR5WxKk%2Fimg.png&quot; alt=&quot;null&quot;&gt;&lt;/p&gt;
-&lt;br/&gt;
-&lt;p&gt;50라인정도가 되는 하드코딩(?)스러운 코드를 단 8줄로 리팩토링했다. 개인적으론 라인이 줄어듦으로써 이전보다 가독성도 좋아졌다고 생각한다.
-&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;한가지 아쉬웠던것은 Element의 ID를 좀 더 상세한 패턴있게 작명했더라면 (Cnt라는 단어만으로는 다른데에서도 자주 사용되고 있기때문에 좋지못했다....)
-&lt;em&gt;어쩌면 한줄로도 가능하지않았을까&lt;/em&gt; 하는 약간의 아쉬움..이 좀 남는다🤔&lt;/p&gt;
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;hr/&gt;
-&lt;br/&gt;&lt;br/&gt;
-+) 이 글은 [여기(이전 블로그)](https://fascinate-zsoo.tistory.com/24)에서 옮겨왔습니다.🙋‍♀️
-&lt;br/&gt;&lt;br/&gt;</content:encoded></item><item><title><![CDATA[(Postgresql) Returning 구문 정보 리턴 받기]]></title><description><![CDATA[POSTGRESQL
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[(Postgresql) Returning 구문 정보 리턴 받기]]></title><description><![CDATA[POSTGRESQL
  PostgreSQL에는  실행 후, affected rows 갯수 대신 정보를 반환해주는 구문이 있다. 그것이 바로  구문이다 사용방법은 아주아주 간단하다!!   문 뒤에  을 쓰면 실행 결과 ROWS를 반환한다.   이 흥미로…]]></description><link>https://didue.github.io/didue.github.io/postgresql-returning/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/postgresql-returning/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;#x26;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdfhdXW%2Fbtq665WfGR8%2FQX4BBDAwhiz52sGi08Ychk%2Fimg.png&quot; alt=&quot;POSTGRESQL&quot;&gt;
 &lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
 &lt;p&gt;PostgreSQL에는 &lt;code class=&quot;language-text&quot;&gt;DML(INSERT, UPDATE, DELETE)&lt;/code&gt; 실행 후, affected rows 갯수 대신 정보를 반환해주는 구문이 있다.&lt;/p&gt;
