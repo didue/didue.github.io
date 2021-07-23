@@ -141,12 +141,12 @@ It is not recommended to include " in the title.
       }
 
       // markdown 내 date의 timezone 제거
-      if (node.frontmatter.date.includes('+')) {
-        const date = new Date(node.frontmatter.date.split('+')[0]);
-        node.frontmatter.date = date;
-      } else {
-        node.frontmatter.date = new Date(node.frontmatter.date);
-      }
+      // if (node.frontmatter.date.includes('+')) {
+      //   const date = new Date(node.frontmatter.date.split('+')[0]);
+      //   node.frontmatter.date = date;
+      // } else {
+      //   node.frontmatter.date = new Date(node.frontmatter.date);
+      // }
 
       if (!node.frontmatter.update) {
         node.frontmatter.update = '0001-01-01T00:00:00.000Z';
