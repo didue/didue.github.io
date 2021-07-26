@@ -1,5 +1,5 @@
 ---
-title : 
+title : (TIL#3) Clean Code -(1)
 date : 2021-07-24
 tags : ['TIL', 'Clean Code']
 keywords : ['TIL', 'Clean Code']
