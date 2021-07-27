@@ -12,7 +12,8 @@ module.exports = {
     // If the file does not exist, it is replaced by a random image.
 
   /** Home > Bio information*/
-  comment: 'sʏsᴛᴇᴍ.ᴏᴜᴛ.ᴘʀɪɴᴛ("ʜᴇʟʟᴏ, ᴡᴏʀʟᴅ!");',
+  //sʏsᴛᴇᴍ.ᴏᴜᴛ.ᴘʀɪɴᴛ("ʜᴇʟʟᴏ, ᴛʜᴇʀᴇ!");
+  comment: '자바 그리고 자바스크립트 웹 개발 환경을 좋아하고 공부하는 개발자 한지수입니다.',
   name: 'HAN JISOO',
   company: '',
   location: 'Seoul, Korea',
