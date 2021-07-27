@@ -18,6 +18,38 @@ keywords : ['sonarqube', 'til', 'linux', 'postgresql']
 
 
 
+
+## SonarQube Web 설정하기 
+
+### sonar.properties
+
+#### jdbc 설정
+```
+sonar.jdbc.username=sonar
+sonar.jdbc.password=XXXXXXXX
+```
+
+```
+#----- PostgreSQL 8.x or greater
+# If you don't use the schema named "public", please refer to http://jira.sonarsource.com/browse/SONAR-5000
+sonar.jdbc.url=jdbc:postgresql://localhost/sonarqube
+```
+
+#### WEB서버 설정
+```
+sonar.web.javaOpts=-Xmx3096m -Xms2048m -XX:+HeapDumpOnOutOfMemoryError
+```
+
+```
+#0.0.0.0 = localhost
+sonar.web.host=0.0.0.0
+sonar.web.port=9000:
+```
+
+
+
+
+
 ---
 <br/>
 
