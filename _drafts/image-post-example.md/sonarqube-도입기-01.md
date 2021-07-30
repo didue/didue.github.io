@@ -1,8 +1,8 @@
 ---
 title : 코드 품질관리 SonarQube 도입기(1) - 설치하기
 date : 2021-07-27
-tags : ['sonarqube', 'til', 'linux', 'postgresql']
-keywords : ['sonarqube', 'til', 'linux', 'postgresql']
+tags : ['TIL', 'Linux', 'PostgresQL']
+keywords : ['sonarqube', 'TIL', 'Linux', 'PostgresQL']
 ---
 
 좋은 코드, 좋은 시스템에 대한 꿈과 갈망은 늘 마음속에 품었으나 하드코딩 난무하는 `레거시코드`와 `통계지옥`에 치이고 약간은 타성에 젖어가고 있는 2년 n개월차 개발자쯤.. <br/>

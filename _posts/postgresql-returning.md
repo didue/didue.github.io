@@ -1,8 +1,8 @@
 ---
 title : (Postgresql) Returning 구문 정보 리턴 받기
 date : 2021-07-23
-tags : []
-keywords : []
+tags : ['PostgresQL']
+keywords : ['PostgresQL', 'Returning']
 ---
 
 ![POSTGRESQL](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdfhdXW%2Fbtq665WfGR8%2FQX4BBDAwhiz52sGi08Ychk%2Fimg.png)

@@ -1,7 +1,7 @@
 ---
 title : Javascript ES6 Spread 연산자(...)
 date : 2021-07-23
-tags : ['JavaScript', 'ES6', 'spread operator']
+tags : ['JavaScript', 'ES6']
 keywords : ['JavaScript', 'ES6', 'spread operator']
 ---
 

@@ -1,7 +1,7 @@
 ---
 title : Javascript/jQuery Selector에서 와일드카드 사용하기
 date : 2021-07-23
-tags : ['JavaScript', 'selector', 'wildcard']
+tags : ['JavaScript']
 keywords : ['JavaScript', 'selector', 'wildcard']
 ---
 

@@ -1,7 +1,7 @@
 ---
 title : (TIL#2) Console 제대로 알고 쓰기 (with 드림코딩)
 date : 2021-07-23
-tags : ['TIL', 'JavaScript', 'Console']
+tags : ['TIL', 'JavaScript']
 keywords : ['JavaScript', 'console', '드림코딩']
 ---
 

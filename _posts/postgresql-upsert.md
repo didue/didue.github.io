@@ -1,8 +1,8 @@
 ---
 title : (Postgresql) UPSERT 사용하기
 date : 2021-07-23
-tags : []
-keywords : []
+tags : ['PostgresQL']
+keywords : ['PostgresQL', 'UPSERT']
 ---
 
 List가 없이 에디터 하나로 insert/update를 해야하는 게시판을 작성하는 업무가 있어서 찾아보다가 `UPSERT`라는 것을 알게 되었다!
