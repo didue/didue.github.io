@@ -5,9 +5,12 @@ tags : ['sonarqube', 'til', 'linux', 'postgresql']
 keywords : ['sonarqube', 'til', 'linux', 'postgresql']
 ---
 
-<br/>
+![](https://media.vlpt.us/images/3rd-big/post/6304e3ad-127b-4392-8a0b-da0c942bb556/sonarqube-logo@2x.png)
+<br/><br/>
 
----
+
+
+
 <br/>
 
 ### 참고

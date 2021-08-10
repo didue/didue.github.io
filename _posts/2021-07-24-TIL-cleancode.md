@@ -26,6 +26,7 @@ keywords : ['TIL', 'Clean Code']
 <br/><br/>
 
 ![mbti나태지옥포지션](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FMlSSY%2Fbtq7biuFnCU%2FhVUVhZHX5p6LYrScxUgumK%2Fimg.jpg)
+
 두번째 조건이라면 나태지옥 교관 포지션인 ENTJ인 나로선 어려운 일이 아니다
 <br/><br/>
 
