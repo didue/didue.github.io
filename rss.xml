@@ -1,4 +1,111 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[D.log | Feed]]></title><description><![CDATA[Blog Description]]></description><link>https://didue.github.io/didue.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 27 Jul 2021 07:35:37 GMT</lastBuildDate><item><title><![CDATA[(TIL#3) Clean Code -(1)]]></title><description><![CDATA[null
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[D.log | Feed]]></title><description><![CDATA[Blog Description]]></description><link>https://didue.github.io/didue.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 11 Aug 2021 04:51:54 GMT</lastBuildDate><item><title><![CDATA[코드 품질관리 SonarQube 도입기(1) - 설치하기]]></title><description><![CDATA[좋은 시스템에서 좋은 코드를 보고 배우며 성장하는 유토피아를 꿈꾸는 주니어였지만 , 현실은 하드코딩 난무하는 와 에 치이고 약간은 타성에 젖어가며... 저는 어느덧 2년 n개월차 주니어로 살고 있었습니다.😥
+ 그때 만난 이글이 저에게 뭔가 가 되었습…]]></description><link>https://didue.github.io/didue.github.io/sonarqube-도입기_1/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/sonarqube-도입기_1/</guid><pubDate>Tue, 27 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://media.vlpt.us/images/3rd-big/post/6304e3ad-127b-4392-8a0b-da0c942bb556/sonarqube-logo@2x.png&quot;&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;좋은 시스템에서 좋은 코드를 보고 배우며 성장하는 유토피아를 꿈꾸는 주니어였지만 , 현실은 하드코딩 난무하는 &lt;code class=&quot;language-text&quot;&gt;레거시코드&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;통계업무지옥&lt;/code&gt;에 치이고 약간은 타성에 젖어가며... 저는 어느덧 2년 n개월차 주니어로 살고 있었습니다.😥
+&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;그때 만난 &lt;a href=&quot;https://sogoagain.github.io/2020/03/08/%EB%A0%88%EA%B1%B0%EC%8B%9C-%EC%BD%94%EB%93%9C%EB%A5%BC-%EC%A0%90%EC%A7%84%EC%A0%81%EC%9C%BC%EB%A1%9C-%EA%B0%9C%EC%84%A0%ED%95%9C-%EA%B2%BD%ED%97%98/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;이글&lt;/a&gt;이 저에게 뭔가 &lt;code class=&quot;language-text&quot;&gt;trigger&lt;/code&gt;가 되었습니다! 글 내용 중 가장 와닿았던 부분은 &lt;/p&gt;
+&lt;br/&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;레거시 코드는 다른 사람이 &quot;처음&quot; 작성해야 하는 처지였음을 잊지 말아야 한다. &lt;/li&gt;
+&lt;li&gt;레거시 코드를 만난다고 실망에 그칠 것이 아닌 적극적으로 개선시키는 태도가 필요하다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;br/&gt;
+&lt;p&gt;라는 부분 이었습니다. 레거시 코드를 두고 투덜대기만 할 것이 아니라 저 스스로가 &lt;code class=&quot;language-text&quot;&gt;적극적인 태도&lt;/code&gt;를 가지고 개선하려는 마음 가짐을 갖게 하는 좋은 초석이 되었습니다. 저 조차도 6개월 전에 제가 쓴 코드를 보고도 &apos;아니 이건 왜 이렇게 짰담?🤔&apos; 하는 경우가 있었기 때문에(&lt;del&gt;나만 그런거 아니라고 해줘...&lt;/del&gt;) 더욱 더 공감되는 부분이였습니다.
+&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;그래서 지금 운영 유지보수로 업무하고 있는 프로젝트의 코드 개선을 위해 &lt;code class=&quot;language-text&quot;&gt;SonarQube&lt;/code&gt;를 도입한 경험을 공유합니다. 🕺💃
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;br/&gt;
+&lt;h2 id=&quot;sonarqube-web-설정하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#sonarqube-web-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0&quot; aria-label=&quot;sonarqube web 설정하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;SonarQube Web 설정하기&lt;/h2&gt;
+&lt;p&gt;설치에 앞서 &lt;code class=&quot;language-text&quot;&gt;SonarQube&lt;/code&gt;를 도입한 환경은 프로젝트 개발서버(테스트서버)로 리눅스 RedHat 환경을 기준으로 작성하였습니다. 설치된 프로젝트는 &lt;em&gt;maven, gradle을 사용하지 않는 Spring 프로젝트 환경&lt;/em&gt;임을 명시합니다.&lt;/p&gt;
+&lt;p&gt;우선, 소나큐브를 통해 코드 품질 분석을 하려면 &lt;code class=&quot;language-text&quot;&gt;SonarQube&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;SonarScanner&lt;/code&gt; 그리고 &lt;code class=&quot;language-text&quot;&gt;PostgresQL&lt;/code&gt;이 필요합니다. 차례대로 설치하여 구동해봅시다!
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;h3 id=&quot;1-postgresql-설치&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-postgresql-%EC%84%A4%EC%B9%98&quot; aria-label=&quot;1 postgresql 설치 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. PostgreSQL 설치&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;#postgresql 설치 &lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;apt-get&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; postgresql
+
+&lt;span class=&quot;token comment&quot;&gt;#계정을 postgres로 변경 &lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;su&lt;/span&gt; -u postgres
+
+&lt;span class=&quot;token comment&quot;&gt;#postgresql 커맨드 실행&lt;/span&gt;
+psql &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;#소나큐브 유저생성&lt;/span&gt;
+CREATE &lt;span class=&quot;token environment constant&quot;&gt;USER&lt;/span&gt; sonar WITH ENCRYPTED PASSWORD &lt;span class=&quot;token string&quot;&gt;&apos;sonar2020!!&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;#DB생성&lt;/span&gt;
+CREATE DATABASE sonar OWNER sonar&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;#DB권한설정&lt;/span&gt;
+ALTER ROLE sonar WITH CREATEDB&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+GRANT ALL PRIVILGES ON DATABASE sonar TO sonar&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# 커맨드 종료(exit) 후 재시작&lt;/span&gt;
+$ systemctl restart postgresql&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;h3 id=&quot;2-sonarqube-설치&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-sonarqube-%EC%84%A4%EC%B9%98&quot; aria-label=&quot;2 sonarqube 설치 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. SonarQube 설치&lt;/h3&gt;
+&lt;br/&gt;
+&lt;p&gt;홈페이지 &lt;a href=&quot;https://www.sonarqube.org/downloads/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;다운로드&lt;/a&gt; 페이지에서 소나큐브를 다운로드 받아 설치하여 봅시다. 이때 소나큐브를 사용하려면 서버에 &lt;code class=&quot;language-text&quot;&gt;jdk&lt;/code&gt;도 설치되어있어야 하니 &lt;code class=&quot;language-text&quot;&gt;Open JDK 8&lt;/code&gt;버전으로 미리 다운로드를 받아 두도록 합니다.&lt;/p&gt;
+&lt;br/&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;#설치경로 (개인에게 맞는 경로로 사용하길 추천)&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;mkdir&lt;/span&gt; /opt/sonarqube
+
+&lt;span class=&quot;token comment&quot;&gt;#SonarQube 다운로드&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;wget&lt;/span&gt; https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-7.2.1.zip
+
+&lt;span class=&quot;token comment&quot;&gt;#압축 해제 &lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;unzip&lt;/span&gt; sonarqube-7.2.1.zip
+
+&lt;span class=&quot;token comment&quot;&gt;#파일 이동&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;mv&lt;/span&gt; sonarqube-7.2.1 /opt/sonarqube&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;p&gt;소나큐브가 설치된 경로에서 에디터를 사용하여 &lt;code class=&quot;language-text&quot;&gt;sonar.properties&lt;/code&gt;를 속성을 변경해봅시다!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;#디렉토리 이동 &lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; /opt/sonarqube/conf
+
+&lt;span class=&quot;token comment&quot;&gt;#설정파일 변경 &lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;vi&lt;/span&gt; sonar.properties&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;sonar.properties&lt;/code&gt;에서 아래의 내용에 있는 &lt;code class=&quot;language-text&quot;&gt;key&lt;/code&gt;를 찾아 &lt;a href=&quot;#1.-PostgreSQL-%EC%84%A4%EC%B9%98&quot;&gt;1. PostgreSQL-설치&lt;/a&gt; 에서 설정한 대로 속성을 수정을 하시면 됩니다!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;#### jdbc 설정
+sonar.jdbc.username=sonar
+sonar.jdbc.password=sonar
+sonar.jdbc.url=jdbc:postgresql://localhost/sonar
+
+#### WEB서버 설정
+sonar.web.javaOpts=-Xmx3096m -Xms2048m -XX:+HeapDumpOnOutOfMemoryError
+sonar.web.javaAdditionalOpts=-server
+
+sonar.web.host=0.0.0.0
+sonar.web.port=9000
+#9001번 port는 소나큐브내부의 elastic search가 사용하므로 지양&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;h3 id=&quot;3-sonarqube-실행&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-sonarqube-%EC%8B%A4%ED%96%89&quot; aria-label=&quot;3 sonarqube 실행 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. SonarQube 실행&lt;/h3&gt;
+&lt;br/&gt;
+&lt;p&gt;이제 기초 준비가 되었으면 소나큐브를 잘 설치되었는지 구동 커맨드를 실행해 봅니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;#소나큐브 설치 경로 이동 &lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; /opt/sonarqube/bin
+
+&lt;span class=&quot;token comment&quot;&gt;#실행커맨드 &lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#(옵션 목록 : console | start | stop | restart | status | dump)&lt;/span&gt;
+./sonar.sh start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;p&gt;정상적으로 실행되었다면, &lt;a href=&quot;#2.-SonarQube-%EC%84%A4%EC%B9%98&quot;&gt;2. SonarQube 설치&lt;/a&gt;에 설정한 대로 웹콘솔은 &lt;code class=&quot;language-text&quot;&gt;9000&lt;/code&gt;번 포트에서 확인 할 수 있습니다. 타란~🙆‍♀️ 소나큐브의 초기 계정정보는 id와 pw 모두 &lt;code class=&quot;language-text&quot;&gt;admin&lt;/code&gt;을 사용중이니 &lt;strong&gt;꼭!&lt;/strong&gt;  변경하여 사용하도록 하자! &lt;/p&gt;
+&lt;p&gt;(우측상단 프로필 클릭 &gt; My Account &gt; Security 탭에서 수정 가능)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;sonar-console04.png&quot;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;여기까지 소나큐브 설치 방법은 완료되었고, 프로젝트 등록 및 코드스캔에 대한 내용은 2편에서 이어서 금방 돌아오겠습니다💁‍♀️&lt;/p&gt;
+&lt;br/&gt;
+&lt;hr&gt;
+&lt;br/&gt;
+&lt;h3 id=&quot;참고&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%B0%B8%EA%B3%A0&quot; aria-label=&quot;참고 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;참고&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;sonarsource Community &lt;a href=&quot;https://community.sonarsource.com/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://community.sonarsource.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;sonarQube 설치하기 &lt;a href=&quot;https://info-lab.tistory.com/183&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://info-lab.tistory.com/183&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;PostgresQL 가이드북 &lt;a href=&quot;http://www.devkuma.com/books/pages/1459&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;http://www.devkuma.com/books/pages/1459&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[(TIL#3) Clean Code -(1)]]></title><description><![CDATA[null
  클린코드는 인턴시절 나의 멘토였던 책임님이 추천해주신 책이다. 이제 막 부화 수준의 인턴 뽀시래기였던 나는 이 책을 끝까지 읽어 이해할만한 수준이 아니여서 중간에 읽다 그만 두었고, 시간이 조금 흘러 이제야 다시 읽는다T-T
   책의 저자…]]></description><link>https://didue.github.io/didue.github.io/TIL-cleancode/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/TIL-cleancode/</guid><pubDate>Sat, 24 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;
 &lt;br/&gt;&lt;/p&gt;
@@ -14,8 +121,8 @@
 &lt;p&gt;장인정신은 첫째, 장인에게 필요한 원칙, 패턴, 기법, 경험이라는 지식을 습득해야 한다.
 &lt;br/&gt;둘째, 열심히 일하고 연습해 지식은 몸과 마음으로 체득해야 한다.
 &lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;#x26;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FMlSSY%2Fbtq7biuFnCU%2FhVUVhZHX5p6LYrScxUgumK%2Fimg.jpg&quot; alt=&quot;mbti나태지옥포지션&quot;&gt;
-두번째 조건이라면 나태지옥 교관 포지션인 ENTJ인 나로선 어려운 일이 아니다
+&lt;p&gt;&lt;img src=&quot;https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;#x26;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FMlSSY%2Fbtq7biuFnCU%2FhVUVhZHX5p6LYrScxUgumK%2Fimg.jpg&quot; alt=&quot;mbti나태지옥포지션&quot;&gt;&lt;/p&gt;
+&lt;p&gt;두번째 조건이라면 나태지옥 교관 포지션인 ENTJ인 나로선 어려운 일이 아니다
 &lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
 &lt;p&gt;하지만, 현업에 있을 수록 첫번째 조건은 뼈저리게 와닿게도 느끼면서도 참 지키기 여간 어려운 일이 아닐 수 없다ㅜㅜ&lt;/p&gt;
 &lt;p&gt;.&lt;br/&gt;
@@ -136,7 +243,54 @@ f1();&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id=&quot;출처&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%B6%9C%EC%B2%98&quot; aria-label=&quot;출처 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;출처&lt;/h3&gt;
 &lt;p&gt;- MDN : Console &lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/API/Console&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://developer.mozilla.org/ko/docs/Web/API/Console&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;- Node.js : Console &lt;a href=&quot;https://nodejs.org/dist/latest-v14.x/docs/api/console.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://nodejs.org/dist/latest-v14.x/docs/api/console.html&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;- 드림코딩 유튜브 &lt;a href=&quot;https://youtu.be/KxsVV5jbJe4&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://youtu.be/KxsVV5jbJe4&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[proj4.js로 좌표계 변환하기 (중분원점 좌표계 > WGS84 좌표계)]]></title><description><![CDATA[개인프로젝트 또는 현업에서 종종 공공데이터포털의 데이터를 활용할 일이 꽤나 있습니다. 특히 최근에는 지도API를 활용한 업무가 많아졌습니다. 그런데..! 데이터 제공처마다 각각 다른 좌표 투영계를 사용하여 좌표를 제공하여 (표준통일같은건 없는거니..…]]></description><link>https://didue.github.io/didue.github.io/proj4활용기/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/proj4활용기/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;개인프로젝트 또는 현업에서 종종 &lt;a href=&quot;https://www.data.go.kr/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;공공데이터포털&lt;/a&gt;의 데이터를 활용할 일이 꽤나 있습니다.&lt;/p&gt;
+&lt;p&gt;- 드림코딩 유튜브 &lt;a href=&quot;https://youtu.be/KxsVV5jbJe4&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://youtu.be/KxsVV5jbJe4&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[(TIL#1) 모던Javascript - null 병합연산자 ??]]></title><description><![CDATA[null 병합 연산자 '??' 
+null
+
+null 병합 연산자 를 사용하면 짧은 문법으로 여러 연산자 중 그 값이 '확정'되어 있는 변수를 찾을 수 있습니다. 
+
+ 변수의 값은 변수 가 도 아니고  가 아니면 가, 
+그렇지 않을 경우는 가 되도록 …]]></description><link>https://didue.github.io/didue.github.io/TIL/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/TIL/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;null-병합-연산자-&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#null-%EB%B3%91%ED%95%A9-%EC%97%B0%EC%82%B0%EC%9E%90-&quot; aria-label=&quot;null 병합 연산자  permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;null 병합 연산자 &apos;??&apos;&lt;/h2&gt;
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;
+&lt;img src=&quot;https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;#x26;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F995C434C5C07CDA015&quot; alt=&quot;null&quot;&gt;
+&lt;br/&gt;&lt;br/&gt;
+null 병합 연산자 &lt;code class=&quot;language-text&quot;&gt;??&lt;/code&gt;를 사용하면 짧은 문법으로 여러 연산자 중 그 값이 &apos;확정&apos;되어 있는 변수를 찾을 수 있습니다.
+&lt;br/&gt;&lt;br/&gt;
+&lt;code class=&quot;language-text&quot;&gt;x&lt;/code&gt; 변수의 값은 변수 &lt;code class=&quot;language-text&quot;&gt;a&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;null&lt;/code&gt;도 아니고  &lt;code class=&quot;language-text&quot;&gt;undefined&lt;/code&gt;가 아니면 &lt;code class=&quot;language-text&quot;&gt;a&lt;/code&gt;가,
+그렇지 않을 경우는 &lt;code class=&quot;language-text&quot;&gt;b&lt;/code&gt;가 되도록 하고자 할 때&lt;br/&gt;
+우리는 구식 문법으로 아래와 코드를 작성했습니다.
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//old
+//if~else문
+let x;
+if(a !== null &amp;amp;&amp;amp; a!== undefined){
+    x = a;
+}else {
+    x = b;
+}
+
+or 
+
+//삼항연산자
+let x = (a !== null &amp;amp;&amp;amp; a!== undefined)? a : b;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;br/&gt;
+`if~else` 문 또는 비교연산자와 논리연산자를 사용하면 코드길이가 길어져 가독성이 떨어지게 됩니다.&lt;br/&gt;
+이 때, null 병합연산자 `??` 사용해서 코드를 작성하면 이렇게 표현할 수 있습니다. &lt;br/&gt;
+&lt;br/&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//new
+let x = a ?? b;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;h3 id=&quot;연산자-우선순위&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%97%B0%EC%82%B0%EC%9E%90-%EC%9A%B0%EC%84%A0%EC%88%9C%EC%9C%84&quot; aria-label=&quot;연산자 우선순위 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;연산자 우선순위&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;??&lt;/code&gt; 연산자는 &lt;code class=&quot;language-text&quot;&gt;5번째 우선순위&lt;/code&gt;로 꽤 낮습니다.
+그렇기 때문에 연산자가 복잡한 표현식안에서는 &lt;code class=&quot;language-text&quot;&gt;괄호&lt;/code&gt;를 사용하여 표현하는 방법이 좋습니다. &lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;??&lt;/code&gt;연산자는 javascript 스펙에 추가된 지 얼마 안 된 문법으로, 구식 브라우저(&lt;del&gt;인터넷 익스플로러 라거나....IE라거나...&lt;/del&gt;)에서는 바벨과 같은 폴리필이 필요합니다.&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;또한 &lt;code class=&quot;language-text&quot;&gt;??&lt;/code&gt; 연산자에는 자바스크립트 언어에서 규정한 &lt;code class=&quot;language-text&quot;&gt;제약사항&lt;/code&gt;이 있습니다.&lt;br/&gt;
+&lt;b&gt;안전성 관련 이슈 때문에 &lt;code class=&quot;language-text&quot;&gt;??&lt;/code&gt;연산자는 &lt;code class=&quot;language-text&quot;&gt;&amp;amp;&amp;amp;(AND)&lt;/code&gt;나 &lt;code class=&quot;language-text&quot;&gt;||(OR)&lt;/code&gt;연산자와 함께 사용할수 없습니다.&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//Syntax Error : Uxexpected token &amp;#39;??&amp;#39;
+let x = 1 &amp;amp;&amp;amp; 2 ?? 3;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br/&gt;제약을 피하려면 아래 예시처럼 &lt;code class=&quot;language-text&quot;&gt;괄호&lt;/code&gt;를 사용할 수 있습니다. &lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let x = (1 &amp;amp;&amp;amp; 2) ?? 3;
+console.log(x);         //2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[proj4.js로 좌표계 변환하기 (중분원점 좌표계 > WGS84 좌표계)]]></title><description><![CDATA[개인프로젝트 또는 현업에서 종종 공공데이터포털의 데이터를 활용할 일이 꽤나 있습니다. 특히 최근에는 지도API를 활용한 업무가 많아졌습니다. 그런데..! 데이터 제공처마다 각각 다른 좌표 투영계를 사용하여 좌표를 제공하여 (표준통일같은건 없는거니..…]]></description><link>https://didue.github.io/didue.github.io/proj4활용기/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/proj4활용기/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;개인프로젝트 또는 현업에서 종종 &lt;a href=&quot;https://www.data.go.kr/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;공공데이터포털&lt;/a&gt;의 데이터를 활용할 일이 꽤나 있습니다.&lt;/p&gt;
 &lt;p&gt;특히 최근에는 지도API를 활용한 업무가 많아졌습니다.&lt;/p&gt;
 &lt;p&gt;그런데..! 데이터 제공처마다 &lt;span style=&quot;color:cornflowerblue;&quot;&gt;&lt;em&gt;각각 다른 좌표 투영계를 사용&lt;/em&gt;&lt;/span&gt;하여 좌표를 제공하여 (&lt;del&gt;표준통일같은건 없는거니..&lt;/del&gt;)&lt;/p&gt;
 &lt;p&gt;현재 사용중인 카카오맵SDK에서 기본으로하는 위경도 좌표계(위도 38.xxxx, 경도 126.xxx의 표시방법)로 좌표계 변환이 필요했습니다.&lt;/p&gt;
@@ -218,54 +372,7 @@ public class TransCoord {
 좌표변환 코드를 보면 세상짧고 별거없어 보이는 코드이지만....
 &lt;p&gt;저 라이브러리와 코드를 찾기위해 몇번이고 구글을 떠돌던 며칠전의 저와 같은 모습을 하고 계실 또 다른 분들이 도움이 되셨기를...!🙋‍♀️&lt;/p&gt;
 &lt;p&gt;&lt;br/&gt;&lt;br/&gt;
-+) 이 글은 &lt;a href=&quot;https://fascinate-zsoo.tistory.com/24&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;여기(이전 블로그)&lt;/a&gt;에서 옮겨왔습니다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[(TIL#1) 모던Javascript - null 병합연산자 ??]]></title><description><![CDATA[null 병합 연산자 '??' 
-null
-
-null 병합 연산자 를 사용하면 짧은 문법으로 여러 연산자 중 그 값이 '확정'되어 있는 변수를 찾을 수 있습니다. 
-
- 변수의 값은 변수 가 도 아니고  가 아니면 가, 
-그렇지 않을 경우는 가 되도록 …]]></description><link>https://didue.github.io/didue.github.io/TIL/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/TIL/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;null-병합-연산자-&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#null-%EB%B3%91%ED%95%A9-%EC%97%B0%EC%82%B0%EC%9E%90-&quot; aria-label=&quot;null 병합 연산자  permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;null 병합 연산자 &apos;??&apos;&lt;/h2&gt;
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;
-&lt;img src=&quot;https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;#x26;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F995C434C5C07CDA015&quot; alt=&quot;null&quot;&gt;
-&lt;br/&gt;&lt;br/&gt;
-null 병합 연산자 &lt;code class=&quot;language-text&quot;&gt;??&lt;/code&gt;를 사용하면 짧은 문법으로 여러 연산자 중 그 값이 &apos;확정&apos;되어 있는 변수를 찾을 수 있습니다.
-&lt;br/&gt;&lt;br/&gt;
-&lt;code class=&quot;language-text&quot;&gt;x&lt;/code&gt; 변수의 값은 변수 &lt;code class=&quot;language-text&quot;&gt;a&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;null&lt;/code&gt;도 아니고  &lt;code class=&quot;language-text&quot;&gt;undefined&lt;/code&gt;가 아니면 &lt;code class=&quot;language-text&quot;&gt;a&lt;/code&gt;가,
-그렇지 않을 경우는 &lt;code class=&quot;language-text&quot;&gt;b&lt;/code&gt;가 되도록 하고자 할 때&lt;br/&gt;
-우리는 구식 문법으로 아래와 코드를 작성했습니다.
-&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//old
-//if~else문
-let x;
-if(a !== null &amp;amp;&amp;amp; a!== undefined){
-    x = a;
-}else {
-    x = b;
-}
-
-or 
-
-//삼항연산자
-let x = (a !== null &amp;amp;&amp;amp; a!== undefined)? a : b;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;br/&gt;
-`if~else` 문 또는 비교연산자와 논리연산자를 사용하면 코드길이가 길어져 가독성이 떨어지게 됩니다.&lt;br/&gt;
-이 때, null 병합연산자 `??` 사용해서 코드를 작성하면 이렇게 표현할 수 있습니다. &lt;br/&gt;
-&lt;br/&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//new
-let x = a ?? b;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;h3 id=&quot;연산자-우선순위&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%97%B0%EC%82%B0%EC%9E%90-%EC%9A%B0%EC%84%A0%EC%88%9C%EC%9C%84&quot; aria-label=&quot;연산자 우선순위 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;연산자 우선순위&lt;/h3&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;??&lt;/code&gt; 연산자는 &lt;code class=&quot;language-text&quot;&gt;5번째 우선순위&lt;/code&gt;로 꽤 낮습니다.
-그렇기 때문에 연산자가 복잡한 표현식안에서는 &lt;code class=&quot;language-text&quot;&gt;괄호&lt;/code&gt;를 사용하여 표현하는 방법이 좋습니다. &lt;br/&gt;
-&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;??&lt;/code&gt;연산자는 javascript 스펙에 추가된 지 얼마 안 된 문법으로, 구식 브라우저(&lt;del&gt;인터넷 익스플로러 라거나....IE라거나...&lt;/del&gt;)에서는 바벨과 같은 폴리필이 필요합니다.&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;또한 &lt;code class=&quot;language-text&quot;&gt;??&lt;/code&gt; 연산자에는 자바스크립트 언어에서 규정한 &lt;code class=&quot;language-text&quot;&gt;제약사항&lt;/code&gt;이 있습니다.&lt;br/&gt;
-&lt;b&gt;안전성 관련 이슈 때문에 &lt;code class=&quot;language-text&quot;&gt;??&lt;/code&gt;연산자는 &lt;code class=&quot;language-text&quot;&gt;&amp;amp;&amp;amp;(AND)&lt;/code&gt;나 &lt;code class=&quot;language-text&quot;&gt;||(OR)&lt;/code&gt;연산자와 함께 사용할수 없습니다.&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//Syntax Error : Uxexpected token &amp;#39;??&amp;#39;
-let x = 1 &amp;amp;&amp;amp; 2 ?? 3;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br/&gt;제약을 피하려면 아래 예시처럼 &lt;code class=&quot;language-text&quot;&gt;괄호&lt;/code&gt;를 사용할 수 있습니다. &lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let x = (1 &amp;amp;&amp;amp; 2) ?? 3;
-console.log(x);         //2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Javascript ES6 Spread 연산자(...)]]></title><description><![CDATA[근래 JavaScript를 아주 씐나게 공부하고 있는 와중에, 에서 추가된 새로운 연산자가 있어 공부해보았다.😛
++) 이 글은 &lt;a href=&quot;https://fascinate-zsoo.tistory.com/24&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;여기(이전 블로그)&lt;/a&gt;에서 옮겨왔습니다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Javascript ES6 Spread 연산자(...)]]></title><description><![CDATA[근래 JavaScript를 아주 씐나게 공부하고 있는 와중에, 에서 추가된 새로운 연산자가 있어 공부해보았다.😛
  Spread Operator Spread 문법은  연산자를 통해서 사용할 수 있다. MDN 설명에 의하면, 전개 구문을 사용하면 배열이…]]></description><link>https://didue.github.io/didue.github.io/javascript-spread-operator/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/javascript-spread-operator/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;근래 JavaScript를 아주 씐나게 공부하고 있는 와중에, &lt;code class=&quot;language-text&quot;&gt;ECMA2015(ES6)&lt;/code&gt;에서 추가된 &lt;strong&gt;새로운 연산자&lt;/strong&gt;가 있어 공부해보았다.😛
 &lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
 &lt;h2 id=&quot;spread-operator&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#spread-operator&quot; aria-label=&quot;spread operator permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Spread Operator&lt;/h2&gt;
@@ -347,44 +454,7 @@ grape
 */&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;hr&gt;
 &lt;h3 id=&quot;2-문서&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%EB%AC%B8%EC%84%9C&quot; aria-label=&quot;2 문서 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;2. 문서&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Spread_syntax&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;MDN Documents &gt; 전개 구문&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Javascript/jQuery Selector에서 와일드카드 사용하기]]></title><description><![CDATA[또는 에서 을 사용할 때
-와일드카드를 이용하여 패턴으로 탐색하고 싶은 경우엔 아래와 같이 사용해보자!  ~로 시작하는 요소   ~로 끝나는 요소  ~를 포함하는 요소  아래 이미지는 를 사용하여 지난 프로젝트의 레거시 코드를 아주 조금 리팩토링했었던…]]></description><link>https://didue.github.io/didue.github.io/javascript-wildcard/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/javascript-wildcard/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;JavaScript&lt;/code&gt; 또는 &lt;code class=&quot;language-text&quot;&gt;jQuery&lt;/code&gt;에서 &lt;code class=&quot;language-text&quot;&gt;querySelectorAll()&lt;/code&gt;을 사용할 때&lt;br/&gt;
-와일드카드를 이용하여 &lt;em&gt;패턴으로 탐색&lt;/em&gt;하고 싶은 경우엔 아래와 같이 사용해보자!&lt;/p&gt;
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;~로 시작하는 요소&lt;/strong&gt;  &lt;code class=&quot;language-text&quot;&gt;^&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//JavaScript
-document.querySelectorAll(&amp;quot;[id^=&amp;#39;abc&amp;#39;]&amp;quot;);
-
-//jQuery
-$(&amp;quot;[id^=&amp;#39;abc&amp;#39;]&amp;quot;);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;~로 끝나는 요소&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;$&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//JavaScript
-document.querySelectorAll(&amp;quot;[id$=&amp;#39;abc&amp;#39;]&amp;quot;);
-
-//jQuery
-$(&amp;quot;[id$=&amp;#39;abc&amp;#39;]&amp;quot;);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;~를 포함하는 요소&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;*&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//JavaScript
-document.querySelectorAll(&amp;quot;[id*=&amp;#39;abc&amp;#39;]&amp;quot;);
-
-//jQuery
-$(&amp;quot;[id*=&amp;#39;abc&amp;#39;]&amp;quot;);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;br/&gt;
-&lt;hr&gt;
-&lt;br/&gt;
-&lt;p&gt;아래 이미지는 &lt;code class=&quot;language-text&quot;&gt;와일드카드&lt;/code&gt;를 사용하여 지난 프로젝트의 레거시 코드를 아주 조금 리팩토링했었던 코드이다. 👻&lt;/p&gt;
-&lt;br/&gt;
-&lt;p&gt;&lt;img src=&quot;https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;#x26;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FkVCvG%2FbtqE81F1Iox%2Fp3kVAWDJNMLRWXzQR5WxKk%2Fimg.png&quot; alt=&quot;null&quot;&gt;&lt;/p&gt;
-&lt;br/&gt;
-&lt;p&gt;50라인정도가 되는 하드코딩(?)스러운 코드를 단 8줄로 리팩토링했다. 개인적으론 라인이 줄어듦으로써 이전보다 가독성도 좋아졌다고 생각한다.
-&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;한가지 아쉬웠던것은 Element의 ID를 좀 더 상세한 패턴있게 작명했더라면 (Cnt라는 단어만으로는 다른데에서도 자주 사용되고 있기때문에 좋지못했다....)
-&lt;em&gt;어쩌면 한줄로도 가능하지않았을까&lt;/em&gt; 하는 약간의 아쉬움..이 좀 남는다🤔&lt;/p&gt;
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;hr/&gt;
-&lt;br/&gt;&lt;br/&gt;
-+) 이 글은 [여기(이전 블로그)](https://fascinate-zsoo.tistory.com/24)에서 옮겨왔습니다.🙋‍♀️
-&lt;br/&gt;&lt;br/&gt;</content:encoded></item><item><title><![CDATA[Java8 스트림(Stream)API - map/filter/distinct]]></title><description><![CDATA[Java8에서 선보인 Stream API를 근래 업무에서 너무 편하게 잘쓰고있어서 정리해보려 한다. 필요의 순간에 아주 유용하게 쓸 수 있는 API니 잘 알아두자! Java Stream 기존에 자바 Collection이나 Array의 요소를 가공할 …]]></description><link>https://didue.github.io/didue.github.io/java-stream-api/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/java-stream-api/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Java8에서 선보인 Stream API를 근래 업무에서 너무 편하게 잘쓰고있어서 정리해보려 한다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Spread_syntax&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;MDN Documents &gt; 전개 구문&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Java8 스트림(Stream)API - map/filter/distinct]]></title><description><![CDATA[Java8에서 선보인 Stream API를 근래 업무에서 너무 편하게 잘쓰고있어서 정리해보려 한다. 필요의 순간에 아주 유용하게 쓸 수 있는 API니 잘 알아두자! Java Stream 기존에 자바 Collection이나 Array의 요소를 가공할 …]]></description><link>https://didue.github.io/didue.github.io/java-stream-api/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/java-stream-api/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Java8에서 선보인 Stream API를 근래 업무에서 너무 편하게 잘쓰고있어서 정리해보려 한다.&lt;/p&gt;
 &lt;p&gt;필요의 순간에 아주 유용하게 쓸 수 있는 API니 잘 알아두자!&lt;/p&gt;
 &lt;h2 id=&quot;java-stream&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#java-stream&quot; aria-label=&quot;java stream permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Java Stream&lt;/h2&gt;
 &lt;p&gt;기존에 자바 Collection이나 Array의 요소를 가공할 때는 &lt;code class=&quot;language-text&quot;&gt;loop(for, foreach)&lt;/code&gt;를 사용해서 요소를 골라내는 작업을 했다면, &lt;code class=&quot;language-text&quot;&gt;Stream&lt;/code&gt;은 &lt;strong&gt;람다형(함수형 인터페이스)&lt;/strong&gt; 으로 간단하게 요소를 처리할 수 있도록 한다&lt;/p&gt;
@@ -481,7 +551,44 @@ private &amp;lt;T&amp;gt; Predicate&amp;lt;T&amp;gt; distinctByKey(Function&amp;
 &lt;p&gt;- 참고사이트 &lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://docs.oracle.com/javase/8/docs/api/index.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://docs.oracle.com/javase/8/docs/api/index.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://futurecreator.github.io/2018/08/26/java-8-streams/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://futurecreator.github.io/2018/08/26/java-8-streams/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://dpdpwl.tistory.com/81&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://dpdpwl.tistory.com/81&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[(Postgresql) Returning 구문 정보 리턴 받기]]></title><description><![CDATA[POSTGRESQL
+&lt;p&gt;&lt;a href=&quot;https://dpdpwl.tistory.com/81&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://dpdpwl.tistory.com/81&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Javascript/jQuery Selector에서 와일드카드 사용하기]]></title><description><![CDATA[또는 에서 을 사용할 때
+와일드카드를 이용하여 패턴으로 탐색하고 싶은 경우엔 아래와 같이 사용해보자!  ~로 시작하는 요소   ~로 끝나는 요소  ~를 포함하는 요소  아래 이미지는 를 사용하여 지난 프로젝트의 레거시 코드를 아주 조금 리팩토링했었던…]]></description><link>https://didue.github.io/didue.github.io/javascript-wildcard/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/javascript-wildcard/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;JavaScript&lt;/code&gt; 또는 &lt;code class=&quot;language-text&quot;&gt;jQuery&lt;/code&gt;에서 &lt;code class=&quot;language-text&quot;&gt;querySelectorAll()&lt;/code&gt;을 사용할 때&lt;br/&gt;
+와일드카드를 이용하여 &lt;em&gt;패턴으로 탐색&lt;/em&gt;하고 싶은 경우엔 아래와 같이 사용해보자!&lt;/p&gt;
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;~로 시작하는 요소&lt;/strong&gt;  &lt;code class=&quot;language-text&quot;&gt;^&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//JavaScript
+document.querySelectorAll(&amp;quot;[id^=&amp;#39;abc&amp;#39;]&amp;quot;);
+
+//jQuery
+$(&amp;quot;[id^=&amp;#39;abc&amp;#39;]&amp;quot;);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;~로 끝나는 요소&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;$&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//JavaScript
+document.querySelectorAll(&amp;quot;[id$=&amp;#39;abc&amp;#39;]&amp;quot;);
+
+//jQuery
+$(&amp;quot;[id$=&amp;#39;abc&amp;#39;]&amp;quot;);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;~를 포함하는 요소&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;*&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//JavaScript
+document.querySelectorAll(&amp;quot;[id*=&amp;#39;abc&amp;#39;]&amp;quot;);
+
+//jQuery
+$(&amp;quot;[id*=&amp;#39;abc&amp;#39;]&amp;quot;);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;hr&gt;
+&lt;br/&gt;
+&lt;p&gt;아래 이미지는 &lt;code class=&quot;language-text&quot;&gt;와일드카드&lt;/code&gt;를 사용하여 지난 프로젝트의 레거시 코드를 아주 조금 리팩토링했었던 코드이다. 👻&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;&lt;img src=&quot;https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;#x26;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FkVCvG%2FbtqE81F1Iox%2Fp3kVAWDJNMLRWXzQR5WxKk%2Fimg.png&quot; alt=&quot;null&quot;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;50라인정도가 되는 하드코딩(?)스러운 코드를 단 8줄로 리팩토링했다. 개인적으론 라인이 줄어듦으로써 이전보다 가독성도 좋아졌다고 생각한다.
+&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;한가지 아쉬웠던것은 Element의 ID를 좀 더 상세한 패턴있게 작명했더라면 (Cnt라는 단어만으로는 다른데에서도 자주 사용되고 있기때문에 좋지못했다....)
+&lt;em&gt;어쩌면 한줄로도 가능하지않았을까&lt;/em&gt; 하는 약간의 아쉬움..이 좀 남는다🤔&lt;/p&gt;
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;hr/&gt;
+&lt;br/&gt;&lt;br/&gt;
++) 이 글은 [여기(이전 블로그)](https://fascinate-zsoo.tistory.com/24)에서 옮겨왔습니다.🙋‍♀️
+&lt;br/&gt;&lt;br/&gt;</content:encoded></item><item><title><![CDATA[(Postgresql) Returning 구문 정보 리턴 받기]]></title><description><![CDATA[POSTGRESQL
  PostgreSQL에는  실행 후, affected rows 갯수 대신 정보를 반환해주는 구문이 있다. 그것이 바로  구문이다 사용방법은 아주아주 간단하다!!   문 뒤에  을 쓰면 실행 결과 ROWS를 반환한다.   이 흥미로…]]></description><link>https://didue.github.io/didue.github.io/postgresql-returning/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/postgresql-returning/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;#x26;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdfhdXW%2Fbtq665WfGR8%2FQX4BBDAwhiz52sGi08Ychk%2Fimg.png&quot; alt=&quot;POSTGRESQL&quot;&gt;
 &lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
 &lt;p&gt;PostgreSQL에는 &lt;code class=&quot;language-text&quot;&gt;DML(INSERT, UPDATE, DELETE)&lt;/code&gt; 실행 후, affected rows 갯수 대신 정보를 반환해주는 구문이 있다.&lt;/p&gt;
