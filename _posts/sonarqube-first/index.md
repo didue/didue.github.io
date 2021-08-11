@@ -136,7 +136,7 @@ cd /opt/sonarqube/bin
 
 (우측상단 프로필 클릭 > My Account > Security 탭에서 수정 가능)
 
-![](sonar-console04.png)
+![sonar-console04.png](sonar-console04.PNG)
 
 <br/>
 
