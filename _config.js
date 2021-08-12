@@ -18,7 +18,7 @@ module.exports = {
   company: '',
   location: 'Seoul, Korea',
   email: 'jisoo.han107@gmail.com',
-  website: 'https://bit.ly/3iBq0A9',           // ex.'https://junhobaik.github.io'
+  website: 'https://didue.notion.site/Didue-5acaffbbbf7340f3b932664529ad1100',           // ex.'https://junhobaik.github.io'
   linkedin: 'https://www.linkedin.com/in/%EC%A7%80%EC%88%98-%ED%95%9C-225677215/',                                                          // ex.'https://www.linkedin.com/in/junho-baik-16073a19ab'
   facebook: '',                                                          // ex.'https://www.facebook.com/zuck' or 'https://www.facebook.com/profile.php?id=000000000000000'
   instagram: 'https://instagram.com/d_diue',                                                         // ex.'https://www.instagram.com/junhobaik'
