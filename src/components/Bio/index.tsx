@@ -50,34 +50,34 @@ const Bio = () => {
       )}
 
       <div className="social">
-        <a href={`${config.siteUrl}/rss`} target="_blank" rel="noopener noreferrer">
+        <a href={`${config.siteUrl}/rss`} title="rss" target="_blank" rel="noopener noreferrer">
           <Fa icon={faRss} className="rss" />
         </a>
         
         {!linkedin ? null : (
-          <a href={linkedin} target="_blank" rel="noopener noreferrer">
+          <a href={linkedin} title="linkedin" target="_blank" rel="noopener noreferrer">
             <Fa icon={faLinkedin} className="linkedin" />
           </a>
         )}
 
         {!facebook ? null : (
-          <a href={facebook} target="_blank" rel="noopener noreferrer">
+          <a href={facebook} title="facebook" target="_blank" rel="noopener noreferrer">
             <Fa icon={faFacebook} className="facebook" />
           </a>
         )}
         {!instagram ? null : (
-          <a href={instagram} target="_blank" rel="noopener noreferrer">
+          <a href={instagram} title="instagram" target="_blank" rel="noopener noreferrer">
             <Fa icon={faInstagram} className="instagram" />
           </a>
         )}
         {!github ? null : (
-          <a href={github} target="_blank" rel="noopener noreferrer">
+          <a href={github} title="github" target="_blank" rel="noopener noreferrer">
             <Fa icon={faGithub} className="github" />
           </a>
         )}
         
         {!website ? null : (
-          <a href={website} target="_blank" rel="noopener noreferrer">
+          <a href={website} title="portfolio" target="_blank" rel="noopener noreferrer">
             <Fa icon={faPaperclip} className="linkedin" />
           </a>
         )}
