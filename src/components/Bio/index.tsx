@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { FontAwesomeIcon as Fa } from '@fortawesome/react-fontawesome';
-import { faUserCircle, faAt, faMapMarkerAlt, faLink, faAddressCard, faRss } from '@fortawesome/free-solid-svg-icons';
+import { faUserCircle, faAt, faMapMarkerAlt, faAddressCard, faRss, faPaperclip } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faInstagram, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import './bio.scss';
@@ -49,23 +49,11 @@ const Bio = () => {
         </div>
       )}
 
-      {!website ? null : (
-        <div className="bio-item website">
-          <div className="icon-wrap">
-            <Fa icon={faLink} />
-          </div>
-
-          <a href={website} target="_blank" rel="noopener noreferrer">
-            {website}
-          </a>
-        </div>
-      )}
-
       <div className="social">
         <a href={`${config.siteUrl}/rss`} target="_blank" rel="noopener noreferrer">
           <Fa icon={faRss} className="rss" />
         </a>
-
+        
         {!linkedin ? null : (
           <a href={linkedin} target="_blank" rel="noopener noreferrer">
             <Fa icon={faLinkedin} className="linkedin" />
@@ -85,6 +73,12 @@ const Bio = () => {
         {!github ? null : (
           <a href={github} target="_blank" rel="noopener noreferrer">
             <Fa icon={faGithub} className="github" />
+          </a>
+        )}
+        
+        {!website ? null : (
+          <a href={website} target="_blank" rel="noopener noreferrer">
+            <Fa icon={faPaperclip} className="linkedin" />
           </a>
         )}
       </div>
