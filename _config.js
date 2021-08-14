@@ -22,7 +22,7 @@ module.exports = {
   linkedin: 'https://www.linkedin.com/in/%EC%A7%80%EC%88%98-%ED%95%9C-225677215/',                                                          // ex.'https://www.linkedin.com/in/junho-baik-16073a19ab'
   facebook: '',                                                          // ex.'https://www.facebook.com/zuck' or 'https://www.facebook.com/profile.php?id=000000000000000'
   instagram: 'https://instagram.com/d_diue',                                                         // ex.'https://www.instagram.com/junhobaik'
-  github: 'https://github.com/didue',                                                            // ex.'https://github.com/junhobaik'
+  github: 'https://github.com/didue',                                                         // ex.'https://github.com/junhobaik'
 
   /** Post */
   enablePostOfContents: true,     // TableOfContents activation (Type of Value: Boolean. Not String)
