@@ -29,9 +29,10 @@ module.exports = {
   disqusShortname: '',            // comments (Disqus sort-name)
   enableSocialShare: true,        // Social share icon activation (Type of Value: Boolean. Not String)
 
+  //google-site-verification=
   /** Optional */
   googleAnalytics: 'G-PM0KYX45CD',     // Google Analytics TrackingID. ex.'UA-123456789-0'
-  googleSearchConsole: '', // content value in HTML tag of google search console ownership verification. ex.'w-K42k14_I4ApiQKuVPbCRVV-GxlrqWxYoqO94KMbKo'
+  googleSearchConsole: 'IsenpbRtF_jmEbIDmoBTMKud76D0XpN7SU4t073NP2Y', // content value in HTML tag of google search console ownership verification. ex.'w-K42k14_I4ApiQKuVPbCRVV-GxlrqWxYoqO94KMbKo'
   googleAdsenseSlot: '',   // Google Adsense Slot. ex.'5214956675'
   googleAdsenseClient: 'ca-pub-1986476617358545', // Google Adsense Client. ex.'ca-pub-5001380215831339'
     // Please correct the adsense client number(ex.5001380215831339) in the './static/ads.txt' file.
