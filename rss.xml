@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[D.log | Feed]]></title><description><![CDATA[Blog Description]]></description><link>https://didue.github.io/didue.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 13 Aug 2021 07:14:19 GMT</lastBuildDate><item><title><![CDATA[(Postgresql) 중복데이터 제거하고 하나만 남기기]]></title><description><![CDATA[운영 유지보수 프로젝트에서 업무를 하다 보니, 생각보다 더 많은 부정확한 중복데이터가 있어 자주 곤란한 상황들이 있었습니다. 그때마다 시간을 들여서 개선하는 것보단 당장의 과업을 해결하기 위해 엑셀 1차 가공 및 2차 수작업 정비와 같은 비효율적인 …]]></description><link>https://didue.github.io/didue.github.io/TIL/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/TIL/</guid><pubDate>Sat, 07 Aug 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;운영 유지보수 프로젝트에서 업무를 하다 보니, 생각보다 더 많은 부정확한 중복데이터가 있어 자주 곤란한 상황들이 있었습니다. 그때마다 시간을 들여서 개선하는 것보단 당장의 과업을 해결하기 위해 엑셀 1차 가공 및 2차 수작업 정비와 같은 비효율적인 작업들을 많이 해왔습니다. (&lt;del&gt;일일이 눈으로 8천건 중복찾기라던가...물론 자의가 아니라 타의에 의해..T0T&lt;/del&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[D.log | Feed]]></title><description><![CDATA[Blog Description]]></description><link>https://didue.github.io/didue.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 17 Aug 2021 01:46:20 GMT</lastBuildDate><item><title><![CDATA[(Postgresql) 중복데이터 제거하고 하나만 남기기]]></title><description><![CDATA[운영 유지보수 프로젝트에서 업무를 하다 보니, 생각보다 더 많은 부정확한 중복데이터가 있어 자주 곤란한 상황들이 있었습니다. 그때마다 시간을 들여서 개선하는 것보단 당장의 과업을 해결하기 위해 엑셀 1차 가공 및 2차 수작업 정비와 같은 비효율적인 …]]></description><link>https://didue.github.io/didue.github.io/TIL/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/TIL/</guid><pubDate>Sat, 07 Aug 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;운영 유지보수 프로젝트에서 업무를 하다 보니, 생각보다 더 많은 부정확한 중복데이터가 있어 자주 곤란한 상황들이 있었습니다. 그때마다 시간을 들여서 개선하는 것보단 당장의 과업을 해결하기 위해 엑셀 1차 가공 및 2차 수작업 정비와 같은 비효율적인 작업들을 많이 해왔습니다. (&lt;del&gt;일일이 눈으로 8천건 중복찾기라던가...물론 자의가 아니라 타의에 의해..T0T&lt;/del&gt;&lt;/p&gt;
 &lt;br/&gt;
 &lt;p&gt;그 중에 가장 큰 업무가 &lt;code class=&quot;language-text&quot;&gt;중복데이터 제거&lt;/code&gt;하기 였습니다. &lt;a href=&quot;https://code.go.kr&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;공공데이터포털&lt;/a&gt; 이라는 공공개방 데이터를 활용한 2차 서비스를 기능 개발하는 업무가 다수 있었으나, 생각보다 공공데이터포털의 자료는 최신화되어 지지 않거나 중복이 걸러지지 않는 광물 원석의 형태에 가까운 날것의 그것(?)인 경우가 많았습니다. &lt;/p&gt;
 &lt;p&gt;각설하고,&lt;/p&gt;
@@ -242,79 +242,7 @@ sonar.web.port=9000
 &lt;/ul&gt;
 &lt;p&gt;&lt;br/&gt;&lt;br/&gt;
 +) 이 글은 &lt;a href=&quot;https://fascinate-zsoo.tistory.com/24&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;여기(이전 블로그)&lt;/a&gt;에서 옮겨왔습니다.🙋‍♀️
-&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[(TIL#2) Console 제대로 알고 쓰기 (with 드림코딩)]]></title><description><![CDATA[consolelog
-
-드림코딩 엘리님의 유튜브를 보고 기억하기위해 적어두는 TIL
- Console 제대로 알고쓰기 콘솔로그의 기본 로그레벨에 따른   할 때만 로그를 출력하고 싶을 경우  를 더 스마트하게 가독성있게 출력하기  수행시간 측정 하기  …]]></description><link>https://didue.github.io/didue.github.io/TIL-console/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/TIL-console/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;#x26;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FRL3DB%2Fbtq8UeXRCxu%2FRwi4Bc26JFQtm7wCDnPPy0%2Fimg.gif&quot; alt=&quot;consolelog&quot;&gt;
-&lt;br/&gt;&lt;br/&gt;
-드림코딩 엘리님의 유튜브를 보고 기억하기위해 적어두는 TIL
-&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;h1 id=&quot;console-제대로-알고쓰기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#console-%EC%A0%9C%EB%8C%80%EB%A1%9C-%EC%95%8C%EA%B3%A0%EC%93%B0%EA%B8%B0&quot; aria-label=&quot;console 제대로 알고쓰기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;Console 제대로 알고쓰기&lt;/strong&gt;&lt;/h1&gt;
-&lt;br/&gt;
-&lt;p&gt;콘솔로그의 기본 로그레벨에 따른 &lt;code class=&quot;language-text&quot;&gt;method&lt;/code&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const cat = {type : &amp;#39;😺&amp;#39; name : &amp;#39;Ori&amp;#39;, owner : {name: &amp;#39;didue&amp;#39;}}
-console.log(&amp;#39;logging&amp;#39; , cat);
-
-//log level
-console.log();   //개발 출력 =&amp;gt; 배포시 삭제
-console.info();  //정보 출력 =&amp;gt; 배포시 삭제 
-console.warn();  //경보 
-console.error(); //에러! 시스템 에러&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;특정 조건이 일치&lt;/code&gt;할 때만 로그를 출력하고 싶을 경우&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//assert 
-console.assert(2 === 3, &amp;#39;not samae!&amp;#39;)
-console.assert(2 === 2, &amp;#39;same!&amp;#39;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Object&lt;/code&gt;를 더 스마트하게 가독성있게 출력하기&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//print object
-console.table(cat);
-console.dir(dog, {color: false, depth : 0});&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;수행시간 측정 하기&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;console.time(&amp;#39;for loop&amp;#39;);
-//working
-console.timeEnd(&amp;#39;for loop&amp;#39;);
-
-//output : for loop 0.053ms&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;스마트하게 &lt;code class=&quot;language-text&quot;&gt;카운팅&lt;/code&gt; 하기&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//old
-let count = 0;
-function a(){
-    count++;
-}
-a();
-a();
-a();
-console.log(count);
-count = 0;
-
-//new
-function a(){
-    console.count(&amp;#39;a function&amp;#39;);
-}
-a();
-a();
-a();
-console.countReset(&amp;#39;a function&amp;#39;);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;함수 어디에서 호출했는지 &lt;code class=&quot;language-text&quot;&gt;tracing&lt;/code&gt;하기&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function f1(){
-    f2();
-}
-function f2(){
-    f3();
-}
-function f3(){
-    console.trace();
-}
-f1();&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&quot;brbr&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#brbr&quot; aria-label=&quot;brbr permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;/h2&gt;
-&lt;h3 id=&quot;출처&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%B6%9C%EC%B2%98&quot; aria-label=&quot;출처 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;출처&lt;/h3&gt;
-&lt;p&gt;- MDN : Console &lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/API/Console&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://developer.mozilla.org/ko/docs/Web/API/Console&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;- Node.js : Console &lt;a href=&quot;https://nodejs.org/dist/latest-v14.x/docs/api/console.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://nodejs.org/dist/latest-v14.x/docs/api/console.html&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;- 드림코딩 유튜브 &lt;a href=&quot;https://youtu.be/KxsVV5jbJe4&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://youtu.be/KxsVV5jbJe4&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[proj4.js로 좌표계 변환하기 (중분원점 좌표계 > WGS84 좌표계)]]></title><description><![CDATA[개인프로젝트 또는 현업에서 종종 공공데이터포털의 데이터를 활용할 일이 꽤나 있습니다. 특히 최근에는 지도API를 활용한 업무가 많아졌습니다. 그런데..! 데이터 제공처마다 각각 다른 좌표 투영계를 사용하여 좌표를 제공하여 (표준통일같은건 없는거니..…]]></description><link>https://didue.github.io/didue.github.io/proj4활용기/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/proj4활용기/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;개인프로젝트 또는 현업에서 종종 &lt;a href=&quot;https://www.data.go.kr/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;공공데이터포털&lt;/a&gt;의 데이터를 활용할 일이 꽤나 있습니다.&lt;/p&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[proj4.js로 좌표계 변환하기 (중분원점 좌표계 > WGS84 좌표계)]]></title><description><![CDATA[개인프로젝트 또는 현업에서 종종 공공데이터포털의 데이터를 활용할 일이 꽤나 있습니다. 특히 최근에는 지도API를 활용한 업무가 많아졌습니다. 그런데..! 데이터 제공처마다 각각 다른 좌표 투영계를 사용하여 좌표를 제공하여 (표준통일같은건 없는거니..…]]></description><link>https://didue.github.io/didue.github.io/proj4활용기/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/proj4활용기/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;개인프로젝트 또는 현업에서 종종 &lt;a href=&quot;https://www.data.go.kr/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;공공데이터포털&lt;/a&gt;의 데이터를 활용할 일이 꽤나 있습니다.&lt;/p&gt;
 &lt;p&gt;특히 최근에는 지도API를 활용한 업무가 많아졌습니다.&lt;/p&gt;
 &lt;p&gt;그런데..! 데이터 제공처마다 &lt;span style=&quot;color:cornflowerblue;&quot;&gt;&lt;em&gt;각각 다른 좌표 투영계를 사용&lt;/em&gt;&lt;/span&gt;하여 좌표를 제공하여 (&lt;del&gt;표준통일같은건 없는거니..&lt;/del&gt;)&lt;/p&gt;
 &lt;p&gt;현재 사용중인 카카오맵SDK에서 기본으로하는 위경도 좌표계(위도 38.xxxx, 경도 126.xxx의 표시방법)로 좌표계 변환이 필요했습니다.&lt;/p&gt;
@@ -443,89 +371,79 @@ let x = a ?? b;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 let x = 1 &amp;amp;&amp;amp; 2 ?? 3;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;br/&gt;제약을 피하려면 아래 예시처럼 &lt;code class=&quot;language-text&quot;&gt;괄호&lt;/code&gt;를 사용할 수 있습니다. &lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let x = (1 &amp;amp;&amp;amp; 2) ?? 3;
-console.log(x);         //2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Javascript ES6 Spread 연산자(...)]]></title><description><![CDATA[근래 JavaScript를 아주 씐나게 공부하고 있는 와중에, 에서 추가된 새로운 연산자가 있어 공부해보았다.😛
- Spread Operator Spread 문법은  연산자를 통해서 사용할 수 있다. MDN 설명에 의하면, 전개 구문을 사용하면 배열이…]]></description><link>https://didue.github.io/didue.github.io/javascript-spread-operator/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/javascript-spread-operator/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;근래 JavaScript를 아주 씐나게 공부하고 있는 와중에, &lt;code class=&quot;language-text&quot;&gt;ECMA2015(ES6)&lt;/code&gt;에서 추가된 &lt;strong&gt;새로운 연산자&lt;/strong&gt;가 있어 공부해보았다.😛
-&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;h2 id=&quot;spread-operator&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#spread-operator&quot; aria-label=&quot;spread operator permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Spread Operator&lt;/h2&gt;
-&lt;p&gt;Spread 문법은 &lt;code class=&quot;language-text&quot;&gt;...&lt;/code&gt; 연산자를 통해서 사용할 수 있다.&lt;/p&gt;
-&lt;br/&gt;
-&lt;p&gt;MDN 설명에 의하면,&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;전개 구문을 사용하면 배열이나 문자열과 같이 반복 가능한 문자를 0개 이상의 인수 (함수로 호출할 경우) 또는 요소 (배열 리터럴의 경우)로 확장하여, 0개 이상의 키-값의 쌍으로 객체로 확장시킬 수 있습니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;br/&gt;
-&lt;p&gt;글만으론 이해가 쉽지않은데 코드를 보면 이해하는데 조금 더 도움이 된다.
-&lt;br/&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;var arr = [1];
-var items = [2, 3];
+console.log(x);         //2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[(TIL#2) Console 제대로 알고 쓰기 (with 드림코딩)]]></title><description><![CDATA[consolelog
 
-arr.push(...items);
-console.log(arr);        //Expected Output : [1, 2, 3]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+드림코딩 엘리님의 유튜브를 보고 기억하기위해 적어두는 TIL
+ Console 제대로 알고쓰기 콘솔로그의 기본 로그레벨에 따른   할 때만 로그를 출력하고 싶을 경우  를 더 스마트하게 가독성있게 출력하기  수행시간 측정 하기  …]]></description><link>https://didue.github.io/didue.github.io/TIL-console/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/TIL-console/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;#x26;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FRL3DB%2Fbtq8UeXRCxu%2FRwi4Bc26JFQtm7wCDnPPy0%2Fimg.gif&quot; alt=&quot;consolelog&quot;&gt;
+&lt;br/&gt;&lt;br/&gt;
+드림코딩 엘리님의 유튜브를 보고 기억하기위해 적어두는 TIL
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;h1 id=&quot;console-제대로-알고쓰기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#console-%EC%A0%9C%EB%8C%80%EB%A1%9C-%EC%95%8C%EA%B3%A0%EC%93%B0%EA%B8%B0&quot; aria-label=&quot;console 제대로 알고쓰기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;Console 제대로 알고쓰기&lt;/strong&gt;&lt;/h1&gt;
 &lt;br/&gt;
-&lt;p&gt;위 코드에서 &lt;code class=&quot;language-text&quot;&gt;arr&lt;/code&gt;출력을 보면 &lt;code class=&quot;language-text&quot;&gt;items&lt;/code&gt;의 요소가 &lt;code class=&quot;language-text&quot;&gt;arr&lt;/code&gt;에 넣어진 것을 볼 수있다.  &lt;/p&gt;
-&lt;p&gt;이걸 통해 확인할 수 있는 것은 &lt;code class=&quot;language-text&quot;&gt;...&lt;/code&gt;연산자를 통해서 &lt;code class=&quot;language-text&quot;&gt;items&lt;/code&gt;의 요소가 전개되어져 &lt;code class=&quot;language-text&quot;&gt;arr&lt;/code&gt;에 넣어졌고, 이것은 곧 그간 우리가 자주 사용하던 &lt;code class=&quot;language-text&quot;&gt;arr.concat()&lt;/code&gt;을 대체할 만 하다는 것을 알게되었다!&lt;/p&gt;
+&lt;p&gt;콘솔로그의 기본 로그레벨에 따른 &lt;code class=&quot;language-text&quot;&gt;method&lt;/code&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const cat = {type : &amp;#39;😺&amp;#39; name : &amp;#39;Ori&amp;#39;, owner : {name: &amp;#39;didue&amp;#39;}}
+console.log(&amp;#39;logging&amp;#39; , cat);
+
+//log level
+console.log();   //개발 출력 =&amp;gt; 배포시 삭제
+console.info();  //정보 출력 =&amp;gt; 배포시 삭제 
+console.warn();  //경보 
+console.error(); //에러! 시스템 에러&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://media.giphy.com/media/dQNP6OnyFUePu/giphy.gif&quot; alt=&quot;ThatsCool&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Spread연산자를 처음 본 나.....ㅎㅎ
-&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;그렇담 이제 Spread문법(이하 전개구문)을 활용한 구문 선언할 수 있는 유형을 알아보자 &lt;/p&gt;
-&lt;br/&gt;
-&lt;h3 id=&quot;함수호출&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%95%A8%EC%88%98%ED%98%B8%EC%B6%9C&quot; aria-label=&quot;함수호출 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;함수호출&lt;/h3&gt;
-&lt;br/&gt;
-&lt;p&gt;일반적으로 배열의 요소를 함수의 인자로 사용하려고 할 때,&lt;br&gt;
-&lt;code class=&quot;language-text&quot;&gt;Function.prototype.apply()&lt;/code&gt;를 사용하였는데 &apos;전개구문&apos;을 사용하면 아래와 같이 바뀔수 있다.
-&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt; function myFunction(x,y,z){ }
- var args = [0, 1, 2];
-
- //before
- myFunction.apply(null, args);
-
-//after 
-myFunction.apply(...args);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;br/&gt;
-&lt;h3 id=&quot;배열리터럴-과-문자열&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%B0%B0%EC%97%B4%EB%A6%AC%ED%84%B0%EB%9F%B4-%EA%B3%BC-%EB%AC%B8%EC%9E%90%EC%97%B4&quot; aria-label=&quot;배열리터럴 과 문자열 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;배열리터럴 과 문자열&lt;/h3&gt;
-&lt;br/&gt;
-&lt;p&gt;전개구문은 기존의 &lt;code class=&quot;language-text&quot;&gt;push()&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;splice()&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;concat()&lt;/code&gt; 등을 조합해서 사용하는 코드를 훨씬 간단하게 만들어줄 수도 있다.
-&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;1) 배열 복사&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;var arr1 = [a, b, c];
-
-//before
-var arr2 = arr1.splice();    
-//after
-var arr = [...arr];&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;br/&gt;
-&lt;p&gt;&lt;strong&gt;2) 배열 연결&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;var arr1 = [1,2,3];
-var arr2 = [4,5,6];
-
-//before
-arr1 = arr1.concat(arr2);    
-//after
-arr1 = [...arr1, ...arr2];    &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;특정 조건이 일치&lt;/code&gt;할 때만 로그를 출력하고 싶을 경우&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//assert 
+console.assert(2 === 3, &amp;#39;not samae!&amp;#39;)
+console.assert(2 === 2, &amp;#39;same!&amp;#39;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;h3 id=&quot;객체리터럴&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EA%B0%9D%EC%B2%B4%EB%A6%AC%ED%84%B0%EB%9F%B4&quot; aria-label=&quot;객체리터럴 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;객체리터럴&lt;/h3&gt;
-&lt;p&gt;ECMAScript2018에서 추가된 &lt;code class=&quot;language-text&quot;&gt;객체 리터럴&lt;/code&gt;은 객체가 소유한 열거형 프로퍼티를 새로운 객체로 복사할 수 있다.&lt;br&gt;
-얕은 복사(prototype 제외) 또는 객체병합은 &lt;code class=&quot;language-text&quot;&gt;Object.assign()&lt;/code&gt;대신 &lt;code class=&quot;language-text&quot;&gt;...&lt;/code&gt;를 사용한 전개구문으로 이용할 수 있다.&lt;/p&gt;
-&lt;p&gt;객체리터럴의 예제 코드는 MDN에 설명이 더 상세하니 하단의 링크를 참고하자!&lt;/p&gt;
-&lt;h3 id=&quot;-rest-parameter--&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-rest-parameter--&quot; aria-label=&quot; rest parameter   permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;**:: Rest parameter :: **&lt;/h3&gt;
-&lt;p&gt;Rest파라미터도 마찬가지로 전개구문(...연산자) 사용할 수 있다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function print(...param){
-  param.forEach((e) =&amp;gt; {
-    console.log(e);
-  }
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Object&lt;/code&gt;를 더 스마트하게 가독성있게 출력하기&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//print object
+console.table(cat);
+console.dir(dog, {color: false, depth : 0});&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;수행시간 측정 하기&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;console.time(&amp;#39;for loop&amp;#39;);
+//working
+console.timeEnd(&amp;#39;for loop&amp;#39;);
+
+//output : for loop 0.053ms&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;스마트하게 &lt;code class=&quot;language-text&quot;&gt;카운팅&lt;/code&gt; 하기&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//old
+let count = 0;
+function a(){
+    count++;
 }
+a();
+a();
+a();
+console.log(count);
+count = 0;
 
-print(&amp;#39;apple&amp;#39;, &amp;#39;banana&amp;#39;, &amp;#39;grape&amp;#39;);         
-/*
-apple
-banana
-grape
-*/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;2-문서&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%EB%AC%B8%EC%84%9C&quot; aria-label=&quot;2 문서 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;2. 문서&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Spread_syntax&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;MDN Documents &gt; 전개 구문&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Java8 스트림(Stream)API - map/filter/distinct]]></title><description><![CDATA[Java8에서 선보인 Stream API를 근래 업무에서 너무 편하게 잘쓰고있어서 정리해보려 한다. 필요의 순간에 아주 유용하게 쓸 수 있는 API니 잘 알아두자! Java Stream 기존에 자바 Collection이나 Array의 요소를 가공할 …]]></description><link>https://didue.github.io/didue.github.io/java-stream-api/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/java-stream-api/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Java8에서 선보인 Stream API를 근래 업무에서 너무 편하게 잘쓰고있어서 정리해보려 한다.&lt;/p&gt;
+//new
+function a(){
+    console.count(&amp;#39;a function&amp;#39;);
+}
+a();
+a();
+a();
+console.countReset(&amp;#39;a function&amp;#39;);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;함수 어디에서 호출했는지 &lt;code class=&quot;language-text&quot;&gt;tracing&lt;/code&gt;하기&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function f1(){
+    f2();
+}
+function f2(){
+    f3();
+}
+function f3(){
+    console.trace();
+}
+f1();&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;brbr&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#brbr&quot; aria-label=&quot;brbr permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;출처&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%B6%9C%EC%B2%98&quot; aria-label=&quot;출처 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;출처&lt;/h3&gt;
+&lt;p&gt;- MDN : Console &lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/API/Console&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://developer.mozilla.org/ko/docs/Web/API/Console&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;- Node.js : Console &lt;a href=&quot;https://nodejs.org/dist/latest-v14.x/docs/api/console.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://nodejs.org/dist/latest-v14.x/docs/api/console.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;- 드림코딩 유튜브 &lt;a href=&quot;https://youtu.be/KxsVV5jbJe4&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://youtu.be/KxsVV5jbJe4&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Java8 스트림(Stream)API - map/filter/distinct]]></title><description><![CDATA[Java8에서 선보인 Stream API를 근래 업무에서 너무 편하게 잘쓰고있어서 정리해보려 한다. 필요의 순간에 아주 유용하게 쓸 수 있는 API니 잘 알아두자! Java Stream 기존에 자바 Collection이나 Array의 요소를 가공할 …]]></description><link>https://didue.github.io/didue.github.io/java-stream-api/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/java-stream-api/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Java8에서 선보인 Stream API를 근래 업무에서 너무 편하게 잘쓰고있어서 정리해보려 한다.&lt;/p&gt;
 &lt;p&gt;필요의 순간에 아주 유용하게 쓸 수 있는 API니 잘 알아두자!&lt;/p&gt;
 &lt;h2 id=&quot;java-stream&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#java-stream&quot; aria-label=&quot;java stream permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Java Stream&lt;/h2&gt;
 &lt;p&gt;기존에 자바 Collection이나 Array의 요소를 가공할 때는 &lt;code class=&quot;language-text&quot;&gt;loop(for, foreach)&lt;/code&gt;를 사용해서 요소를 골라내는 작업을 했다면, &lt;code class=&quot;language-text&quot;&gt;Stream&lt;/code&gt;은 &lt;strong&gt;람다형(함수형 인터페이스)&lt;/strong&gt; 으로 간단하게 요소를 처리할 수 있도록 한다&lt;/p&gt;
@@ -622,7 +540,164 @@ private &amp;lt;T&amp;gt; Predicate&amp;lt;T&amp;gt; distinctByKey(Function&amp;
 &lt;p&gt;- 참고사이트 &lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://docs.oracle.com/javase/8/docs/api/index.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://docs.oracle.com/javase/8/docs/api/index.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://futurecreator.github.io/2018/08/26/java-8-streams/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://futurecreator.github.io/2018/08/26/java-8-streams/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://dpdpwl.tistory.com/81&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://dpdpwl.tistory.com/81&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Javascript/jQuery Selector에서 와일드카드 사용하기]]></title><description><![CDATA[또는 에서 을 사용할 때
+&lt;p&gt;&lt;a href=&quot;https://dpdpwl.tistory.com/81&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://dpdpwl.tistory.com/81&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Javascript ES6 Spread 연산자(...)]]></title><description><![CDATA[근래 JavaScript를 아주 씐나게 공부하고 있는 와중에, 에서 추가된 새로운 연산자가 있어 공부해보았다.😛
+ Spread Operator Spread 문법은  연산자를 통해서 사용할 수 있다. MDN 설명에 의하면, 전개 구문을 사용하면 배열이…]]></description><link>https://didue.github.io/didue.github.io/javascript-spread-operator/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/javascript-spread-operator/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;근래 JavaScript를 아주 씐나게 공부하고 있는 와중에, &lt;code class=&quot;language-text&quot;&gt;ECMA2015(ES6)&lt;/code&gt;에서 추가된 &lt;strong&gt;새로운 연산자&lt;/strong&gt;가 있어 공부해보았다.😛
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;h2 id=&quot;spread-operator&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#spread-operator&quot; aria-label=&quot;spread operator permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Spread Operator&lt;/h2&gt;
+&lt;p&gt;Spread 문법은 &lt;code class=&quot;language-text&quot;&gt;...&lt;/code&gt; 연산자를 통해서 사용할 수 있다.&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;MDN 설명에 의하면,&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;전개 구문을 사용하면 배열이나 문자열과 같이 반복 가능한 문자를 0개 이상의 인수 (함수로 호출할 경우) 또는 요소 (배열 리터럴의 경우)로 확장하여, 0개 이상의 키-값의 쌍으로 객체로 확장시킬 수 있습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;br/&gt;
+&lt;p&gt;글만으론 이해가 쉽지않은데 코드를 보면 이해하는데 조금 더 도움이 된다.
+&lt;br/&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;var arr = [1];
+var items = [2, 3];
+
+arr.push(...items);
+console.log(arr);        //Expected Output : [1, 2, 3]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;p&gt;위 코드에서 &lt;code class=&quot;language-text&quot;&gt;arr&lt;/code&gt;출력을 보면 &lt;code class=&quot;language-text&quot;&gt;items&lt;/code&gt;의 요소가 &lt;code class=&quot;language-text&quot;&gt;arr&lt;/code&gt;에 넣어진 것을 볼 수있다.  &lt;/p&gt;
+&lt;p&gt;이걸 통해 확인할 수 있는 것은 &lt;code class=&quot;language-text&quot;&gt;...&lt;/code&gt;연산자를 통해서 &lt;code class=&quot;language-text&quot;&gt;items&lt;/code&gt;의 요소가 전개되어져 &lt;code class=&quot;language-text&quot;&gt;arr&lt;/code&gt;에 넣어졌고, 이것은 곧 그간 우리가 자주 사용하던 &lt;code class=&quot;language-text&quot;&gt;arr.concat()&lt;/code&gt;을 대체할 만 하다는 것을 알게되었다!&lt;/p&gt;
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://media.giphy.com/media/dQNP6OnyFUePu/giphy.gif&quot; alt=&quot;ThatsCool&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Spread연산자를 처음 본 나.....ㅎㅎ
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;그렇담 이제 Spread문법(이하 전개구문)을 활용한 구문 선언할 수 있는 유형을 알아보자 &lt;/p&gt;
+&lt;br/&gt;
+&lt;h3 id=&quot;함수호출&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%95%A8%EC%88%98%ED%98%B8%EC%B6%9C&quot; aria-label=&quot;함수호출 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;함수호출&lt;/h3&gt;
+&lt;br/&gt;
+&lt;p&gt;일반적으로 배열의 요소를 함수의 인자로 사용하려고 할 때,&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;Function.prototype.apply()&lt;/code&gt;를 사용하였는데 &apos;전개구문&apos;을 사용하면 아래와 같이 바뀔수 있다.
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt; function myFunction(x,y,z){ }
+ var args = [0, 1, 2];
+
+ //before
+ myFunction.apply(null, args);
+
+//after 
+myFunction.apply(...args);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;h3 id=&quot;배열리터럴-과-문자열&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%B0%B0%EC%97%B4%EB%A6%AC%ED%84%B0%EB%9F%B4-%EA%B3%BC-%EB%AC%B8%EC%9E%90%EC%97%B4&quot; aria-label=&quot;배열리터럴 과 문자열 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;배열리터럴 과 문자열&lt;/h3&gt;
+&lt;br/&gt;
+&lt;p&gt;전개구문은 기존의 &lt;code class=&quot;language-text&quot;&gt;push()&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;splice()&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;concat()&lt;/code&gt; 등을 조합해서 사용하는 코드를 훨씬 간단하게 만들어줄 수도 있다.
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1) 배열 복사&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;var arr1 = [a, b, c];
+
+//before
+var arr2 = arr1.splice();    
+//after
+var arr = [...arr];&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;p&gt;&lt;strong&gt;2) 배열 연결&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;var arr1 = [1,2,3];
+var arr2 = [4,5,6];
+
+//before
+arr1 = arr1.concat(arr2);    
+//after
+arr1 = [...arr1, ...arr2];    &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;h3 id=&quot;객체리터럴&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EA%B0%9D%EC%B2%B4%EB%A6%AC%ED%84%B0%EB%9F%B4&quot; aria-label=&quot;객체리터럴 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;객체리터럴&lt;/h3&gt;
+&lt;p&gt;ECMAScript2018에서 추가된 &lt;code class=&quot;language-text&quot;&gt;객체 리터럴&lt;/code&gt;은 객체가 소유한 열거형 프로퍼티를 새로운 객체로 복사할 수 있다.&lt;br&gt;
+얕은 복사(prototype 제외) 또는 객체병합은 &lt;code class=&quot;language-text&quot;&gt;Object.assign()&lt;/code&gt;대신 &lt;code class=&quot;language-text&quot;&gt;...&lt;/code&gt;를 사용한 전개구문으로 이용할 수 있다.&lt;/p&gt;
+&lt;p&gt;객체리터럴의 예제 코드는 MDN에 설명이 더 상세하니 하단의 링크를 참고하자!&lt;/p&gt;
+&lt;h3 id=&quot;-rest-parameter--&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-rest-parameter--&quot; aria-label=&quot; rest parameter   permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;**:: Rest parameter :: **&lt;/h3&gt;
+&lt;p&gt;Rest파라미터도 마찬가지로 전개구문(...연산자) 사용할 수 있다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function print(...param){
+  param.forEach((e) =&amp;gt; {
+    console.log(e);
+  }
+}
+
+print(&amp;#39;apple&amp;#39;, &amp;#39;banana&amp;#39;, &amp;#39;grape&amp;#39;);         
+/*
+apple
+banana
+grape
+*/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;2-문서&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%EB%AC%B8%EC%84%9C&quot; aria-label=&quot;2 문서 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;2. 문서&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Spread_syntax&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;MDN Documents &gt; 전개 구문&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[(Postgresql) Returning 구문 정보 리턴 받기]]></title><description><![CDATA[POSTGRESQL
+ PostgreSQL에는  실행 후, affected rows 갯수 대신 정보를 반환해주는 구문이 있다. 그것이 바로  구문이다 사용방법은 아주아주 간단하다!!   문 뒤에  을 쓰면 실행 결과 ROWS를 반환한다.   이 흥미로…]]></description><link>https://didue.github.io/didue.github.io/postgresql-returning/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/postgresql-returning/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;#x26;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdfhdXW%2Fbtq665WfGR8%2FQX4BBDAwhiz52sGi08Ychk%2Fimg.png&quot; alt=&quot;POSTGRESQL&quot;&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;PostgreSQL에는 &lt;code class=&quot;language-text&quot;&gt;DML(INSERT, UPDATE, DELETE)&lt;/code&gt; 실행 후, affected rows 갯수 대신 정보를 반환해주는 구문이 있다.&lt;/p&gt;
+&lt;p&gt;그것이 바로 &lt;code class=&quot;language-text&quot;&gt;RETURNING&lt;/code&gt; 구문이다&lt;/p&gt;
+&lt;p&gt;사용방법은 &lt;strong&gt;아주아주&lt;/strong&gt; 간단하다!!  &lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;INSERT, UPDATE, DELETE&lt;/code&gt;문 뒤에 &lt;code class=&quot;language-text&quot;&gt;RETURNING *&lt;/code&gt; 을 쓰면 실행 결과 ROWS를 반환한다.  &lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;이 흥미로운 문법을 아래의 활용 예제를 보면서 &lt;code class=&quot;language-text&quot;&gt;RETURNING&lt;/code&gt; 을 어떻게 쓸 수 있는지 자세히 살펴보자👩🤟&lt;/p&gt;
+&lt;br/&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;examples&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#examples&quot; aria-label=&quot;examples permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Examples&lt;/h2&gt;
+&lt;br/&gt;
+&lt;h3 id=&quot;활용1-select-key&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%99%9C%EC%9A%A91-select-key&quot; aria-label=&quot;활용1 select key permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;활용1. SELECT KEY&lt;/h3&gt;
+&lt;br/&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;spring&lt;/code&gt; 환경에서 우리는 &lt;code class=&quot;language-text&quot;&gt;insert(혹은 update)&lt;/code&gt;에서 SQL 실행 후 특정 값을 반환하고 싶을 때,
+대게의 경우에 mybatis(혹은 ibatis)의 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;selectKey&amp;gt;&lt;/code&gt;를 이용하여 이렇게 썼을 것이다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//old
+&amp;lt;insert&amp;gt;
+    INSERT INTO BOARD(BOARD_ID, TITLE, CONTENT)
+    VALUES(&amp;#39;A01&amp;#39;, &amp;#39;게시글 타이틀&amp;#39;, &amp;#39;게시글 내용&amp;#39;)
+    &amp;lt;selectKey keyProperty=&amp;quot;&amp;quot; resultType=&amp;quot;&amp;quot; order=&amp;quot;AFTER&amp;quot; &amp;gt;
+        SELECT BOARD_ID
+    &amp;lt;/selectKey&amp;gt;        
+&amp;lt;/insert&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;하지만 &lt;code class=&quot;language-text&quot;&gt;PostgreSQL&lt;/code&gt; 에서는 mybatis없이 이렇게도 쓸 수 있다!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//new
+&amp;lt;insert&amp;gt;
+    INSERT INTO BOARD(BOARD_ID, TITLE, CONTENT)
+    VALUES(&amp;#39;A01&amp;#39;, &amp;#39;게시글 타이틀&amp;#39;, &amp;#39;게시글 내용&amp;#39;)
+    RETURNING BOARD_ID
+&amp;lt;/insert&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;확실히 &lt;code class=&quot;language-text&quot;&gt;insert&lt;/code&gt;안에 &lt;code class=&quot;language-text&quot;&gt;select&lt;/code&gt;가 들어가있는것 보다 가독성도 좋아보이고,&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;반환(RETURNING)&lt;/code&gt;한다는 의미와 해달 컬럼이 더 잘 전달된다.
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jjalbot.com/media/2020/03/QPPbAIEl7V/SY9jdwKFd.jpeg&quot; alt=&quot;https://jjalbot.com/media/2020/03/QPPbAIEl7V/SY9jdwKFd.jpeg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;편안~
+&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;h3 id=&quot;활용2-upsert&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%99%9C%EC%9A%A92-upsert&quot; aria-label=&quot;활용2 upsert permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;활용2. UPSERT&lt;/h3&gt;
+&lt;br/&gt;
+&lt;p&gt;두번째 활용 예는 &lt;code class=&quot;language-text&quot;&gt;UPSERT&lt;/code&gt;이다. &lt;br/&gt;
+많은 사용자들이 알듯이 PostgreSQL에는 오라클의 &lt;code class=&quot;language-text&quot;&gt;MERGE&lt;/code&gt;문이 없다 T-T&lt;br&gt;
+그래서 오라클의 그것과 같은 동작을 위해 우리는 PostgreSQL의 &lt;code class=&quot;language-text&quot;&gt;WITH&lt;/code&gt;를 활용할 수 있다.&lt;/p&gt;
+&lt;br/&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//update할 row가 없으면 insert 하는 upsert(merge)문
+
+WITH UPSERT AS (                            
+    UPDATE BOARD
+    SET TITLE = &amp;#39;게시글 타이틀 수정&amp;#39;
+        , CONTENT = &amp;#39;게시글 내용 수정&amp;#39;
+    WHERE BOARD_ID = &amp;#39;A01&amp;#39;
+    RETURNING *
+)
+INSERT INTO BOARD(
+    BOARD_ID
+    , TITLE
+    , CONTENT
+)
+SELECT
+    BOARD_ID
+    , TITLE
+    , CONTENT
+WHERE NOT EXISTS ( SELECT * FROM UPSERT )&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;PostgreSQL의 &lt;code class=&quot;language-text&quot;&gt;UPSERT&lt;/code&gt;문은 &lt;a href=&quot;https://didue.github.io/postgresql-upsert/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;여기&lt;/a&gt;에서 이전에 한번 다룬적이 있으니, 두 SQL을 비교해보면서 본인의 상황에 적절한 것을 골라서 써볼 수 있도록 하자!
+&lt;br/&gt;&lt;br/&gt;
++) 이 글은 &lt;a href=&quot;https://fascinate-zsoo.tistory.com/24&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;여기(이전 블로그)&lt;/a&gt;에서 옮겨왔습니다.🙋‍♀️
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&quot;참고&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%B0%B8%EA%B3%A0&quot; aria-label=&quot;참고 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;참고&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;PostgreSQL With : &lt;a href=&quot;https://www.postgresql.org/docs/9.4/queries-with.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://www.postgresql.org/docs/9.4/queries-with.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;PostgreSQL Insert Multi-Rows : &lt;a href=&quot;https://www.postgresqltutorial.com/postgresql-insert-multiple-rows/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://www.postgresqltutorial.com/postgresql-insert-multiple-rows/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Javascript/jQuery Selector에서 와일드카드 사용하기]]></title><description><![CDATA[또는 에서 을 사용할 때
 와일드카드를 이용하여 패턴으로 탐색하고 싶은 경우엔 아래와 같이 사용해보자!  ~로 시작하는 요소   ~로 끝나는 요소  ~를 포함하는 요소  아래 이미지는 를 사용하여 지난 프로젝트의 레거시 코드를 아주 조금 리팩토링했었던…]]></description><link>https://didue.github.io/didue.github.io/javascript-wildcard/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/javascript-wildcard/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;JavaScript&lt;/code&gt; 또는 &lt;code class=&quot;language-text&quot;&gt;jQuery&lt;/code&gt;에서 &lt;code class=&quot;language-text&quot;&gt;querySelectorAll()&lt;/code&gt;을 사용할 때&lt;br/&gt;
 와일드카드를 이용하여 &lt;em&gt;패턴으로 탐색&lt;/em&gt;하고 싶은 경우엔 아래와 같이 사용해보자!&lt;/p&gt;
 &lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
@@ -659,84 +734,4 @@ $(&amp;quot;[id*=&amp;#39;abc&amp;#39;]&amp;quot;);&lt;/code&gt;&lt;/pre&gt;&lt;
 &lt;hr/&gt;
 &lt;br/&gt;&lt;br/&gt;
 +) 이 글은 [여기(이전 블로그)](https://fascinate-zsoo.tistory.com/24)에서 옮겨왔습니다.🙋‍♀️
-&lt;br/&gt;&lt;br/&gt;</content:encoded></item><item><title><![CDATA[(Postgresql) UPSERT 사용하기]]></title><description><![CDATA[List가 없이 에디터 하나로 insert/update를 해야하는 게시판을 작성하는 업무가 있어서 찾아보다가 라는 것을 알게 되었다!  는 일종의 문 같은 개념으로(postgresql은 merge가 없음......)
-행이 없으면(존재하지않으면) IN…]]></description><link>https://didue.github.io/didue.github.io/postgresql-upsert/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/postgresql-upsert/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;List가 없이 에디터 하나로 insert/update를 해야하는 게시판을 작성하는 업무가 있어서 찾아보다가 &lt;code class=&quot;language-text&quot;&gt;UPSERT&lt;/code&gt;라는 것을 알게 되었다!&lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;UPSERT&lt;/code&gt; 는 일종의 &lt;code class=&quot;language-text&quot;&gt;MERGE&lt;/code&gt;문 같은 개념으로(&lt;del&gt;postgresql은 merge가 없음......&lt;/del&gt;)
-&lt;strong&gt;행이 없으면(존재하지않으면) INSERT하고 존재하면 UPDATE하는 문법&lt;/strong&gt;이다.&lt;/p&gt;
-&lt;br/&gt;
-PostgresQL의 공식 Document에 내용이 너무 잘 정리되어있어서 그 내용을 정리하며 복습해보려 한다.
-&lt;br/&gt;
-&lt;hr&gt;
-&lt;br/&gt;
-&lt;h2 id=&quot;postgresql의-upsert&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#postgresql%EC%9D%98-upsert&quot; aria-label=&quot;postgresql의 upsert permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;PostgresQL의 UPSERT&lt;/h2&gt;
-&lt;br/&gt;
-&lt;p&gt;postgresQL에서 사용하는 UPSERT문법은 아래와 같다!&lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Insert&lt;/code&gt;문 다음에 존재하는지 확인할 &lt;code class=&quot;language-text&quot;&gt;target&lt;/code&gt;과 타겟 확인 이후 &lt;code class=&quot;language-text&quot;&gt;action&lt;/code&gt; 순으로 작성한다.
-기본 구문 형태는 아래와 같이 사용한다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;INSERT INTO table_name(column_list) 
-VALUES(value_list)
-ON CONFLICT target action;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;br/&gt;
-&lt;h3 id=&quot;target&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#target&quot; aria-label=&quot;target permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Target&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;(column name) : 컬럼명&lt;/li&gt;
-&lt;li&gt;ON CONSTRAINT 제약이름 : unique 제약의 이름&lt;/li&gt;
-&lt;li&gt;WHERE 절&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;action&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#action&quot; aria-label=&quot;action permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Action&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;DO NOTIHING : 아무것도 수행하지 않음&lt;/li&gt;
-&lt;li&gt;DO UPDATE SET ~~~ : 테이블 일부 필드의 업데이트&lt;/li&gt;
-&lt;/ul&gt;
-&lt;br/&gt;
-&lt;p&gt;※ ON CONFLICT절은 PostgresQL9.5 이상에서만 사용할 수 있다!
-&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;br/&gt;
-&lt;h2 id=&quot;example&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#example&quot; aria-label=&quot;example permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Example&lt;/h2&gt;
-&lt;br/&gt;
-&lt;p&gt;이제 예제를 보면서 이해해보자. 아래 &lt;code class=&quot;language-text&quot;&gt;DDL&lt;/code&gt;문에서 정의하는 &lt;b&gt;customers라는 테이블&lt;/b&gt;이 있다고 할 때&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;DROP TABLE IF EXISTS customers;
-
-CREATE TABLE customers (
-    customer_id serial PRIMARY KEY,
-    name VARCHAR UNIQUE,
-    email VARCHAR NOT NULL,
-    active bool NOT NULL DEFAULT TRUE
-);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;br/&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;unique&lt;/code&gt; 속성이 있는 name 컬럼의 값이 이미 존재한다면, 아무것도 수행하지 않도록하는 SQL은 아래와 같이 쓸 수 있다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;INSERT INTO customers (NAME, email)
-VALUES(&amp;#39;Microsoft&amp;#39;,&amp;#39;hotline@microsoft.com&amp;#39;) 
-ON CONFLICT ON CONSTRAINT customers_name_key 
-DO NOTHING;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;제약조건말고 컬럼명(name)으로도 동일한 수행을 하도록 작성할 수 있다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;INSERT INTO customers (name, email)
-VALUES(&amp;#39;Microsoft&amp;#39;,&amp;#39;hotline@microsoft.com&amp;#39;) 
-ON CONFLICT (name) 
-DO NOTHING;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;마지막으로 이미 존재하는 대상에 대해서는 &lt;code class=&quot;language-text&quot;&gt;UPDATE&lt;/code&gt;하도록
-&lt;code class=&quot;language-text&quot;&gt;ACTION&lt;/code&gt;을 주는 SQL은 &lt;code class=&quot;language-text&quot;&gt;DO 절&lt;/code&gt; 뒤에 수행될 UPDATE문을 작성하면 된다!&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;INSERT INTO customers (name, email)
-VALUES(&amp;#39;Microsoft&amp;#39;,&amp;#39;hotline@microsoft.com&amp;#39;) 
-ON CONFLICT (name) 
-DO 
-   UPDATE SET email = EXCLUDED.email || &amp;#39;;&amp;#39; || customers.email;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;(+) 개인적으로 현업에서 &lt;code class=&quot;language-text&quot;&gt;ON CONFLICT&lt;/code&gt;보다 더 자주 사용하는&lt;br&gt;
-&lt;code class=&quot;language-text&quot;&gt;RETURNING&lt;/code&gt;문을 활용한 UPSERT도 있으니 비교해보고 상황에 맞는것을 사용해보자!&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://didue.github.io/postgresql-returning/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;[PostgreSQL] Returning 구문으로 정보 리턴 받기
-&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;
-+) 이 글은 &lt;a href=&quot;https://fascinate-zsoo.tistory.com/24&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;여기(이전 블로그)&lt;/a&gt;에서 옮겨왔습니다.🙋‍♀️
-&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;h3 id=&quot;참고&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%B0%B8%EA%B3%A0&quot; aria-label=&quot;참고 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;참고&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.postgresqltutorial.com/postgresql-upsert/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;PostgresQL API Document&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item></channel></rss>
+&lt;br/&gt;&lt;br/&gt;</content:encoded></item></channel></rss>
