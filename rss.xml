@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[D.log | Feed]]></title><description><![CDATA[Blog Description]]></description><link>https://didue.github.io/didue.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 20 Aug 2021 00:23:11 GMT</lastBuildDate><item><title><![CDATA[코드 품질관리 SonarQube 도입기(2) - 실행하기]]></title><description><![CDATA[SonarScanner 소나큐브 설치 도입기였던 이전 게시글에 이어서 이번에는  설치하여 코드분석을 실행해보겠습니다.
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[D.log | Feed]]></title><description><![CDATA[Blog Description]]></description><link>https://didue.github.io/didue.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 20 Aug 2021 00:33:58 GMT</lastBuildDate><item><title><![CDATA[코드 품질관리 SonarQube 도입기(2) - 실행하기]]></title><description><![CDATA[SonarScanner 소나큐브 설치 도입기였던 이전 게시글에 이어서 이번에는  설치하여 코드분석을 실행해보겠습니다.
  는 소나큐브가 버그나 취약점 등 코드 분석과 자동 리뷰할 수 있도록 코드를 읽는 스캐너입니다. 
  1. 소나스캐너 설치 소나큐브 …]]></description><link>https://didue.github.io/didue.github.io/sonarqube_2/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/sonarqube_2/</guid><pubDate>Tue, 17 Aug 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://media.vlpt.us/images/3rd-big/post/6304e3ad-127b-4392-8a0b-da0c942bb556/sonarqube-logo@2x.png&quot;&gt;
 &lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
@@ -605,82 +605,7 @@ private &amp;lt;T&amp;gt; Predicate&amp;lt;T&amp;gt; distinctByKey(Function&amp;
 &lt;p&gt;- 참고사이트 &lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://docs.oracle.com/javase/8/docs/api/index.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://docs.oracle.com/javase/8/docs/api/index.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://futurecreator.github.io/2018/08/26/java-8-streams/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://futurecreator.github.io/2018/08/26/java-8-streams/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://dpdpwl.tistory.com/81&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://dpdpwl.tistory.com/81&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[(Postgresql) Returning 구문 정보 리턴 받기]]></title><description><![CDATA[POSTGRESQL
- PostgreSQL에는  실행 후, affected rows 갯수 대신 정보를 반환해주는 구문이 있다. 그것이 바로  구문이다 사용방법은 아주아주 간단하다!!   문 뒤에  을 쓰면 실행 결과 ROWS를 반환한다.   이 흥미로…]]></description><link>https://didue.github.io/didue.github.io/postgresql-returning/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/postgresql-returning/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;#x26;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdfhdXW%2Fbtq665WfGR8%2FQX4BBDAwhiz52sGi08Ychk%2Fimg.png&quot; alt=&quot;POSTGRESQL&quot;&gt;
-&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;PostgreSQL에는 &lt;code class=&quot;language-text&quot;&gt;DML(INSERT, UPDATE, DELETE)&lt;/code&gt; 실행 후, affected rows 갯수 대신 정보를 반환해주는 구문이 있다.&lt;/p&gt;
-&lt;p&gt;그것이 바로 &lt;code class=&quot;language-text&quot;&gt;RETURNING&lt;/code&gt; 구문이다&lt;/p&gt;
-&lt;p&gt;사용방법은 &lt;strong&gt;아주아주&lt;/strong&gt; 간단하다!!  &lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;INSERT, UPDATE, DELETE&lt;/code&gt;문 뒤에 &lt;code class=&quot;language-text&quot;&gt;RETURNING *&lt;/code&gt; 을 쓰면 실행 결과 ROWS를 반환한다.  &lt;/p&gt;
-&lt;br/&gt;
-&lt;p&gt;이 흥미로운 문법을 아래의 활용 예제를 보면서 &lt;code class=&quot;language-text&quot;&gt;RETURNING&lt;/code&gt; 을 어떻게 쓸 수 있는지 자세히 살펴보자👩🤟&lt;/p&gt;
-&lt;br/&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;examples&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#examples&quot; aria-label=&quot;examples permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Examples&lt;/h2&gt;
-&lt;br/&gt;
-&lt;h3 id=&quot;활용1-select-key&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%99%9C%EC%9A%A91-select-key&quot; aria-label=&quot;활용1 select key permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;활용1. SELECT KEY&lt;/h3&gt;
-&lt;br/&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;spring&lt;/code&gt; 환경에서 우리는 &lt;code class=&quot;language-text&quot;&gt;insert(혹은 update)&lt;/code&gt;에서 SQL 실행 후 특정 값을 반환하고 싶을 때,
-대게의 경우에 mybatis(혹은 ibatis)의 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;selectKey&amp;gt;&lt;/code&gt;를 이용하여 이렇게 썼을 것이다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//old
-&amp;lt;insert&amp;gt;
-    INSERT INTO BOARD(BOARD_ID, TITLE, CONTENT)
-    VALUES(&amp;#39;A01&amp;#39;, &amp;#39;게시글 타이틀&amp;#39;, &amp;#39;게시글 내용&amp;#39;)
-    &amp;lt;selectKey keyProperty=&amp;quot;&amp;quot; resultType=&amp;quot;&amp;quot; order=&amp;quot;AFTER&amp;quot; &amp;gt;
-        SELECT BOARD_ID
-    &amp;lt;/selectKey&amp;gt;        
-&amp;lt;/insert&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;하지만 &lt;code class=&quot;language-text&quot;&gt;PostgreSQL&lt;/code&gt; 에서는 mybatis없이 이렇게도 쓸 수 있다!&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//new
-&amp;lt;insert&amp;gt;
-    INSERT INTO BOARD(BOARD_ID, TITLE, CONTENT)
-    VALUES(&amp;#39;A01&amp;#39;, &amp;#39;게시글 타이틀&amp;#39;, &amp;#39;게시글 내용&amp;#39;)
-    RETURNING BOARD_ID
-&amp;lt;/insert&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;확실히 &lt;code class=&quot;language-text&quot;&gt;insert&lt;/code&gt;안에 &lt;code class=&quot;language-text&quot;&gt;select&lt;/code&gt;가 들어가있는것 보다 가독성도 좋아보이고,&lt;br&gt;
-&lt;code class=&quot;language-text&quot;&gt;반환(RETURNING)&lt;/code&gt;한다는 의미와 해달 컬럼이 더 잘 전달된다.
-&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://jjalbot.com/media/2020/03/QPPbAIEl7V/SY9jdwKFd.jpeg&quot; alt=&quot;https://jjalbot.com/media/2020/03/QPPbAIEl7V/SY9jdwKFd.jpeg&quot;&gt;&lt;/p&gt;
-&lt;p&gt;편안~
-&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;h3 id=&quot;활용2-upsert&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%99%9C%EC%9A%A92-upsert&quot; aria-label=&quot;활용2 upsert permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;활용2. UPSERT&lt;/h3&gt;
-&lt;br/&gt;
-&lt;p&gt;두번째 활용 예는 &lt;code class=&quot;language-text&quot;&gt;UPSERT&lt;/code&gt;이다. &lt;br/&gt;
-많은 사용자들이 알듯이 PostgreSQL에는 오라클의 &lt;code class=&quot;language-text&quot;&gt;MERGE&lt;/code&gt;문이 없다 T-T&lt;br&gt;
-그래서 오라클의 그것과 같은 동작을 위해 우리는 PostgreSQL의 &lt;code class=&quot;language-text&quot;&gt;WITH&lt;/code&gt;를 활용할 수 있다.&lt;/p&gt;
-&lt;br/&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//update할 row가 없으면 insert 하는 upsert(merge)문
-
-WITH UPSERT AS (                            
-    UPDATE BOARD
-    SET TITLE = &amp;#39;게시글 타이틀 수정&amp;#39;
-        , CONTENT = &amp;#39;게시글 내용 수정&amp;#39;
-    WHERE BOARD_ID = &amp;#39;A01&amp;#39;
-    RETURNING *
-)
-INSERT INTO BOARD(
-    BOARD_ID
-    , TITLE
-    , CONTENT
-)
-SELECT
-    BOARD_ID
-    , TITLE
-    , CONTENT
-WHERE NOT EXISTS ( SELECT * FROM UPSERT )&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;PostgreSQL의 &lt;code class=&quot;language-text&quot;&gt;UPSERT&lt;/code&gt;문은 &lt;a href=&quot;https://didue.github.io/postgresql-upsert/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;여기&lt;/a&gt;에서 이전에 한번 다룬적이 있으니, 두 SQL을 비교해보면서 본인의 상황에 적절한 것을 골라서 써볼 수 있도록 하자!
-&lt;br/&gt;&lt;br/&gt;
-+) 이 글은 &lt;a href=&quot;https://fascinate-zsoo.tistory.com/24&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;여기(이전 블로그)&lt;/a&gt;에서 옮겨왔습니다.🙋‍♀️
-&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h4 id=&quot;참고&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%B0%B8%EA%B3%A0&quot; aria-label=&quot;참고 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;참고&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;PostgreSQL With : &lt;a href=&quot;https://www.postgresql.org/docs/9.4/queries-with.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://www.postgresql.org/docs/9.4/queries-with.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;PostgreSQL Insert Multi-Rows : &lt;a href=&quot;https://www.postgresqltutorial.com/postgresql-insert-multiple-rows/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://www.postgresqltutorial.com/postgresql-insert-multiple-rows/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Javascript ES6 Spread 연산자(...)]]></title><description><![CDATA[근래 JavaScript를 아주 씐나게 공부하고 있는 와중에, 에서 추가된 새로운 연산자가 있어 공부해보았다.😛
+&lt;p&gt;&lt;a href=&quot;https://dpdpwl.tistory.com/81&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://dpdpwl.tistory.com/81&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Javascript ES6 Spread 연산자(...)]]></title><description><![CDATA[근래 JavaScript를 아주 씐나게 공부하고 있는 와중에, 에서 추가된 새로운 연산자가 있어 공부해보았다.😛
  Spread Operator Spread 문법은  연산자를 통해서 사용할 수 있다. MDN 설명에 의하면, 전개 구문을 사용하면 배열이…]]></description><link>https://didue.github.io/didue.github.io/javascript-spread-operator/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/javascript-spread-operator/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;근래 JavaScript를 아주 씐나게 공부하고 있는 와중에, &lt;code class=&quot;language-text&quot;&gt;ECMA2015(ES6)&lt;/code&gt;에서 추가된 &lt;strong&gt;새로운 연산자&lt;/strong&gt;가 있어 공부해보았다.😛
 &lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
 &lt;h2 id=&quot;spread-operator&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#spread-operator&quot; aria-label=&quot;spread operator permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Spread Operator&lt;/h2&gt;
@@ -762,4 +687,41 @@ grape
 */&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;hr&gt;
 &lt;h3 id=&quot;2-문서&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%EB%AC%B8%EC%84%9C&quot; aria-label=&quot;2 문서 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;2. 문서&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Spread_syntax&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;MDN Documents &gt; 전개 구문&lt;/a&gt;&lt;/p&gt;</content:encoded></item></channel></rss>
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Spread_syntax&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;MDN Documents &gt; 전개 구문&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Javascript/jQuery Selector에서 와일드카드 사용하기]]></title><description><![CDATA[또는 에서 을 사용할 때
+와일드카드를 이용하여 패턴으로 탐색하고 싶은 경우엔 아래와 같이 사용해보자!  ~로 시작하는 요소   ~로 끝나는 요소  ~를 포함하는 요소  아래 이미지는 를 사용하여 지난 프로젝트의 레거시 코드를 아주 조금 리팩토링했었던…]]></description><link>https://didue.github.io/didue.github.io/javascript-wildcard/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/javascript-wildcard/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;JavaScript&lt;/code&gt; 또는 &lt;code class=&quot;language-text&quot;&gt;jQuery&lt;/code&gt;에서 &lt;code class=&quot;language-text&quot;&gt;querySelectorAll()&lt;/code&gt;을 사용할 때&lt;br/&gt;
+와일드카드를 이용하여 &lt;em&gt;패턴으로 탐색&lt;/em&gt;하고 싶은 경우엔 아래와 같이 사용해보자!&lt;/p&gt;
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;~로 시작하는 요소&lt;/strong&gt;  &lt;code class=&quot;language-text&quot;&gt;^&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//JavaScript
+document.querySelectorAll(&amp;quot;[id^=&amp;#39;abc&amp;#39;]&amp;quot;);
+
+//jQuery
+$(&amp;quot;[id^=&amp;#39;abc&amp;#39;]&amp;quot;);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;~로 끝나는 요소&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;$&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//JavaScript
+document.querySelectorAll(&amp;quot;[id$=&amp;#39;abc&amp;#39;]&amp;quot;);
+
+//jQuery
+$(&amp;quot;[id$=&amp;#39;abc&amp;#39;]&amp;quot;);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;~를 포함하는 요소&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;*&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//JavaScript
+document.querySelectorAll(&amp;quot;[id*=&amp;#39;abc&amp;#39;]&amp;quot;);
+
+//jQuery
+$(&amp;quot;[id*=&amp;#39;abc&amp;#39;]&amp;quot;);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;hr&gt;
+&lt;br/&gt;
+&lt;p&gt;아래 이미지는 &lt;code class=&quot;language-text&quot;&gt;와일드카드&lt;/code&gt;를 사용하여 지난 프로젝트의 레거시 코드를 아주 조금 리팩토링했었던 코드이다. 👻&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;&lt;img src=&quot;https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;#x26;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FkVCvG%2FbtqE81F1Iox%2Fp3kVAWDJNMLRWXzQR5WxKk%2Fimg.png&quot; alt=&quot;null&quot;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;50라인정도가 되는 하드코딩(?)스러운 코드를 단 8줄로 리팩토링했다. 개인적으론 라인이 줄어듦으로써 이전보다 가독성도 좋아졌다고 생각한다.
+&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;한가지 아쉬웠던것은 Element의 ID를 좀 더 상세한 패턴있게 작명했더라면 (Cnt라는 단어만으로는 다른데에서도 자주 사용되고 있기때문에 좋지못했다....)
+&lt;em&gt;어쩌면 한줄로도 가능하지않았을까&lt;/em&gt; 하는 약간의 아쉬움..이 좀 남는다🤔&lt;/p&gt;
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;hr/&gt;
+&lt;br/&gt;&lt;br/&gt;
++) 이 글은 [여기(이전 블로그)](https://fascinate-zsoo.tistory.com/24)에서 옮겨왔습니다.🙋‍♀️
+&lt;br/&gt;&lt;br/&gt;</content:encoded></item></channel></rss>
