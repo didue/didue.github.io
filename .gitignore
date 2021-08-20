@@ -9,3 +9,4 @@ yarn-error.log
 .DS_Store
 public/
 node_modules
+public/index.html

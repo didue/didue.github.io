@@ -5,6 +5,19 @@ tags : ['TIL', 'SonarQube', 'PostgresQL']
 keywords : ['sonarqube', 'TIL', 'Linux', 'PostgresQL']
 ---
 
+## 레거시 코드를 개선하는데 실천한 방법
+
+### **1.Controller, Service, Model의 계층구조 명확히**
+
+### **2.Java의 Best Practice 적용**
+
+### **3.VO와 엔티티 연관 관계 매핑 사용**
+
+### **4.정적 소스 코드 분석 툴 도입**
+
+
+### **앞으로 시도해보고 싶은것**
+
 ![](https://media.vlpt.us/images/3rd-big/post/6304e3ad-127b-4392-8a0b-da0c942bb556/sonarqube-logo@2x.png)
 <br/><br/>
 
