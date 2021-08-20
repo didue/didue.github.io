@@ -1,4 +1,101 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[D.log | Feed]]></title><description><![CDATA[Blog Description]]></description><link>https://didue.github.io/didue.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 17 Aug 2021 02:21:44 GMT</lastBuildDate><item><title><![CDATA[(Postgresql) 중복데이터 제거하고 하나만 남기기]]></title><description><![CDATA[운영 유지보수 프로젝트에서 업무를 하다 보니, 생각보다 더 많은 부정확한 중복데이터가 있어 자주 곤란한 상황들이 있었습니다. 그때마다 시간을 들여서 개선하는 것보단 당장의 과업을 해결하기 위해 엑셀 1차 가공 및 2차 수작업 정비와 같은 비효율적인 …]]></description><link>https://didue.github.io/didue.github.io/TIL/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/TIL/</guid><pubDate>Sat, 07 Aug 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;운영 유지보수 프로젝트에서 업무를 하다 보니, 생각보다 더 많은 부정확한 중복데이터가 있어 자주 곤란한 상황들이 있었습니다. 그때마다 시간을 들여서 개선하는 것보단 당장의 과업을 해결하기 위해 엑셀 1차 가공 및 2차 수작업 정비와 같은 비효율적인 작업들을 많이 해왔습니다. (&lt;del&gt;일일이 눈으로 8천건 중복찾기라던가...물론 자의가 아니라 타의에 의해..T0T&lt;/del&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[D.log | Feed]]></title><description><![CDATA[Blog Description]]></description><link>https://didue.github.io/didue.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 20 Aug 2021 00:16:04 GMT</lastBuildDate><item><title><![CDATA[코드 품질관리 SonarQube 도입기(3) - 활용하기]]></title><description><![CDATA[위 캡쳐사진은 2달 전 소나큐브를 운영업무하고 있는 프로젝트의 개발서버에 설치하였을 때의 처음 콘솔 모습입니다. 버그와 코드스멜의 갯수에 어디부터 리팩토링을 하면 좋을지 난감하기도 했지만 한편으로는 재미있고 의미있는 도전(?)이 되겠다 싶어 웃픈 상…]]></description><link>https://didue.github.io/didue.github.io/sonarqube-third/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/sonarqube-third/</guid><pubDate>Mon, 23 Aug 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://media.vlpt.us/images/3rd-big/post/6304e3ad-127b-4392-8a0b-da0c942bb556/sonarqube-logo@2x.png&quot;&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/acb9a4cef899c0b84c9e113680c38811/9c177/sonar-console01.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 77.02702702702703%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAB30lEQVQ4y3VT2W7bMBDk//9LnvInRYsGNZAURe1YFyXeFHVMdmmplWyZwIjScrncmaFEUTdoZYez/IvX91ecql9w2qHrOkgpobVGCOEY3j/ERFmWuH6W+Cg+8HJ6wbfLdwTXQ1EhLqaUeg5jH2JCti3qjjYTYhfRqgjdfCLolk6Mh53FGOGcg2suuy49vYtpmrAdOiSo6gwMHs/GPAONMujl+S4+Q/BpKSX0fZ/BbVsfkIYBPa2t8RWca4whfVs4YtDz3iWPa4m6rnC9FjgX9a2YNbC0QSvSTx9rx9pynlk01pv51iF1wxinET6M+NmcUMcaIDXGcQTLwhiXmWFDDx8TZo4vOQPVEFyIuc+LltZHKG8xzuM/XbbgwQVkd5NmzeHBRUVT17gQ5bJps3Osj7fkICHTp5j1Dt5ZWrcUszlHkxzG6Py9hWC7WdhMmU7egWnQXYuaTLAhmzBtKN7ns2GCX7a239ObqNNI9KRxdOijDIeUy4qcriRR83Bkv6fWPVNlGhSzWQpNMvyn5u6o7ihzq2makfhu/f4DFQd01u/obCnO8wRHDvdp2EmQXebHOlJRwf54Q+M8jPPPZaACLd1T5/2OMhcW7Fhul2YX6X8c6E/Q6pDOitXl2wXfr30BuhWMlXIXdTIAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;sonar console01&quot;
+        title=&quot;sonar console01&quot;
+        src=&quot;/static/acb9a4cef899c0b84c9e113680c38811/fcda8/sonar-console01.png&quot;
+        srcset=&quot;/static/acb9a4cef899c0b84c9e113680c38811/12f09/sonar-console01.png 148w,
+/static/acb9a4cef899c0b84c9e113680c38811/e4a3f/sonar-console01.png 295w,
+/static/acb9a4cef899c0b84c9e113680c38811/fcda8/sonar-console01.png 590w,
+/static/acb9a4cef899c0b84c9e113680c38811/9c177/sonar-console01.png 880w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;위 캡쳐사진은 2달 전 소나큐브를 운영업무하고 있는 프로젝트의 개발서버에 설치하였을 때의 처음 콘솔 모습입니다. 버그와 코드스멜의 갯수에 어디부터 리팩토링을 하면 좋을지 난감하기도 했지만 한편으로는 재미있고 의미있는 도전(?)이 되겠다 싶어 웃픈 상황이였습니다😹 😹&lt;/p&gt;</content:encoded></item><item><title><![CDATA[코드 품질관리 SonarQube 도입기(2) - 실행하기]]></title><description><![CDATA[SonarScanner 소나큐브 설치 도입기였던 이전 게시글에 이어서 이번에는  설치하여 코드분석을 실행해보겠습니다.
+ 는 소나큐브가 버그나 취약점 등 코드 분석과 자동 리뷰할 수 있도록 코드를 읽는 스캐너입니다. 
+ 1. 소나스캐너 설치 소나큐브 …]]></description><link>https://didue.github.io/didue.github.io/sonarqube-second/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/sonarqube-second/</guid><pubDate>Tue, 17 Aug 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://media.vlpt.us/images/3rd-big/post/6304e3ad-127b-4392-8a0b-da0c942bb556/sonarqube-logo@2x.png&quot;&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;h2 id=&quot;sonarscanner&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#sonarscanner&quot; aria-label=&quot;sonarscanner permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;SonarScanner&lt;/h2&gt;
+&lt;p&gt;소나큐브 설치 도입기였던 &lt;a href=&quot;https://didue.github.io/sonarqube-first/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;이전 게시글&lt;/a&gt;에 이어서 이번에는 &lt;code class=&quot;language-text&quot;&gt;SonarScanner(소나스캐너)&lt;/code&gt; 설치하여 코드분석을 실행해보겠습니다.
+&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;소나스캐너&lt;/code&gt;는 소나큐브가 버그나 취약점 등 코드 분석과 자동 리뷰할 수 있도록 코드를 읽는 스캐너입니다.
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;h3 id=&quot;1-소나스캐너-설치&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-%EC%86%8C%EB%82%98%EC%8A%A4%EC%BA%90%EB%84%88-%EC%84%A4%EC%B9%98&quot; aria-label=&quot;1 소나스캐너 설치 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. 소나스캐너 설치&lt;/h3&gt;
+&lt;p&gt;소나큐브 설치와 마찬가지로 &lt;a href=&quot;https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;소나소스 다운로드&lt;/a&gt;페이지에서 원하는 타입에 맞추어 &lt;code class=&quot;language-text&quot;&gt;소나스캐너&lt;/code&gt;를 설치합니다. &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;code class=&quot;language-text&quot;&gt;maven 또는 gradle&lt;/code&gt; 프로젝트를 쓰시는 분들은 &lt;code class=&quot;language-text&quot;&gt;dependency&lt;/code&gt;를 통해서 프로젝트에 설치&lt;/em&gt;하시거나 &lt;em&gt;&lt;code class=&quot;language-text&quot;&gt;jenkins&lt;/code&gt;의 플러그인으로 설치&lt;/em&gt;하실 수 있습니다. 하지만 저는 서버에 직접 설치하는 방법으로 해보겠습니다!
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;#설치경로 이동
+cd /opt
+
+#소나스캐너 설치 
+wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip
+
+#압축해제
+unzip sonar-scanner-cli-4.6.2.2472-linux.zip
+
+#디렉토리명 변경
+rename sonar-scanner-cli-4.6.2.2472-linux sonar-scanner
+
+#환경변수 등록
+export PATH=$PATH:/opt/sonar-scanner/bin&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;h3 id=&quot;2-소나스캐너-프로젝트-설정&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%EC%86%8C%EB%82%98%EC%8A%A4%EC%BA%90%EB%84%88-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%84%A4%EC%A0%95&quot; aria-label=&quot;2 소나스캐너 프로젝트 설정 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. 소나스캐너 프로젝트 설정&lt;/h3&gt;
+&lt;p&gt;소나스캐너 설치가 완료되었다면 소나큐브 웹 콘솔을 통해 프로젝트를 등록하는 일은 선행해야 합니다. 프로젝트 생성은 &apos;&apos; 메뉴에서 추가할 수 있습니다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;&quot; alt=&quot;웹콘솔 사진&quot;&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;이제 소나큐브 웹 콘솔에 프로젝트 등록을 마쳤다면 소스코드가 있는 프로젝트의 &lt;code class=&quot;language-text&quot;&gt;root 경로&lt;/code&gt;에 &lt;code class=&quot;language-text&quot;&gt;sonar-project.properties&lt;/code&gt;라는 설정파일을 생성하여 조금 전 만든 소나큐브 프로젝트 설정파일을 아래와 같이 작성하여 줍니다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;&quot; alt=&quot;소나스캐너프로젝트 파일 이미지&quot;&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;# 소나큐브에서 등록한 프로젝트 key
+sonar.projectKey=my:project
+
+# 소나큐브에서 등록한 프로젝트 이름
+sonar.projectName=My project
+# 프로젝트 버전
+sonar.projectVersion=1.0
+ 
+# 스캔할 소스 범위 (defaults : .)
+#sonar.sources=.
+ 
+# 소스코드 인코딩(default : UTF-8)
+#sonar.sourceEncoding=UTF-8&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;h3 id=&quot;3-소나스캐너-실행&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-%EC%86%8C%EB%82%98%EC%8A%A4%EC%BA%90%EB%84%88-%EC%8B%A4%ED%96%89&quot; aria-label=&quot;3 소나스캐너 실행 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. 소나스캐너 실행&lt;/h3&gt;
+&lt;p&gt;자, 이제 모든 준비가 끝났습니다. 이제 &lt;code class=&quot;language-text&quot;&gt;sonar-project.properties&lt;/code&gt; 파일이 있는 경로에서 아래의 command로 소나스캐너를 실행하여 우리 프로젝트의 코드를 스캔해봅시다!
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;sonar-scanner -Dsonar.login=myAuthenticationToken&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;p&gt;&lt;em&gt;Tada!&lt;/em&gt; 이제 소나큐브 콘솔에 프로젝트의 코드 분석 결과가 나타날 것 입니다.
+여기까지 소나스캐너 설치는 완료되었습니다.
+소나큐브를 활용하여 코드 리팩토링하여 코드를 개선한 경험에 대한 내용은 &lt;code class=&quot;language-text&quot;&gt;(3편)활용편&lt;/code&gt;에서 곰방 다시 돌아오겠습니다💁‍♀️&lt;/p&gt;
+&lt;br/&gt;
+&lt;hr/&gt;
+&lt;br/&gt;
+&lt;h3 id=&quot;참고&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%B0%B8%EA%B3%A0&quot; aria-label=&quot;참고 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;참고&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;sonarqube docs 9.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://plugins.jenkins.io/sonar/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;sonarqube scanner documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://dololgun.github.io/sonarqube/sonarqube/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;무작정따라하기 블로그&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[(Postgresql) 중복데이터 제거하고 하나만 남기기]]></title><description><![CDATA[운영 유지보수 프로젝트에서 업무를 하다 보니, 생각보다 더 많은 부정확한 중복데이터가 있어 자주 곤란한 상황들이 있었습니다. 그때마다 시간을 들여서 개선하는 것보단 당장의 과업을 해결하기 위해 엑셀 1차 가공 및 2차 수작업 정비와 같은 비효율적인 …]]></description><link>https://didue.github.io/didue.github.io/TIL/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/TIL/</guid><pubDate>Sat, 07 Aug 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;운영 유지보수 프로젝트에서 업무를 하다 보니, 생각보다 더 많은 부정확한 중복데이터가 있어 자주 곤란한 상황들이 있었습니다. 그때마다 시간을 들여서 개선하는 것보단 당장의 과업을 해결하기 위해 엑셀 1차 가공 및 2차 수작업 정비와 같은 비효율적인 작업들을 많이 해왔습니다. (&lt;del&gt;일일이 눈으로 8천건 중복찾기라던가...물론 자의가 아니라 타의에 의해..T0T&lt;/del&gt;&lt;/p&gt;
 &lt;br/&gt;
 &lt;p&gt;그 중에 가장 큰 업무가 &lt;code class=&quot;language-text&quot;&gt;중복데이터 제거&lt;/code&gt;하기 였습니다. &lt;a href=&quot;https://code.go.kr&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;공공데이터포털&lt;/a&gt; 이라는 공공개방 데이터를 활용한 2차 서비스를 기능 개발하는 업무가 다수 있었으나, 생각보다 공공데이터포털의 자료는 최신화되어 지지 않거나 중복이 걸러지지 않는 광물 원석의 형태에 가까운 날것의 그것(?)인 경우가 많았습니다. &lt;/p&gt;
 &lt;p&gt;각설하고,&lt;/p&gt;
@@ -132,7 +229,7 @@ sonar.web.port=9000
 &lt;span class=&quot;token comment&quot;&gt;#(옵션 목록 : console | start | stop | restart | status | dump)&lt;/span&gt;
 ./sonar.sh start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;br/&gt;
-&lt;p&gt;정상적으로 실행되었다면, &lt;a href=&quot;#2.-SonarQube-%EC%84%A4%EC%B9%98&quot;&gt;2. SonarQube 설치&lt;/a&gt;에 설정한 대로 웹콘솔은 &lt;code class=&quot;language-text&quot;&gt;9000&lt;/code&gt;번 포트에서 확인 할 수 있습니다. 타란~🙆‍♀️ 소나큐브의 초기 계정정보는 id와 pw 모두 &lt;code class=&quot;language-text&quot;&gt;admin&lt;/code&gt;을 사용중이니 &lt;strong&gt;꼭!&lt;/strong&gt;  변경하여 사용하도록 하자! &lt;/p&gt;
+&lt;p&gt;정상적으로 실행되었다면, &lt;a href=&quot;#2.-SonarQube-%EC%84%A4%EC%B9%98&quot;&gt;2. SonarQube 설치&lt;/a&gt;에 설정한 대로 웹콘솔은 &lt;code class=&quot;language-text&quot;&gt;9000&lt;/code&gt;번 포트에서 확인 할 수 있습니다. 타란~🙆‍♀️ 소나큐브의 초기 계정정보는 id와 pw 모두 &lt;code class=&quot;language-text&quot;&gt;admin&lt;/code&gt;을 사용중이니 &lt;strong&gt;꼭!&lt;/strong&gt;  변경하여 사용하도록 합시다! &lt;/p&gt;
 &lt;p&gt;(우측상단 프로필 클릭 &gt; My Account &gt; Security 탭에서 수정 가능)&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -242,79 +339,7 @@ sonar.web.port=9000
 &lt;/ul&gt;
 &lt;p&gt;&lt;br/&gt;&lt;br/&gt;
 +) 이 글은 &lt;a href=&quot;https://fascinate-zsoo.tistory.com/24&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;여기(이전 블로그)&lt;/a&gt;에서 옮겨왔습니다.🙋‍♀️
-&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[(TIL#2) Console 제대로 알고 쓰기 (with 드림코딩)]]></title><description><![CDATA[consolelog
-
-드림코딩 엘리님의 유튜브를 보고 기억하기위해 적어두는 TIL
- Console 제대로 알고쓰기 콘솔로그의 기본 로그레벨에 따른   할 때만 로그를 출력하고 싶을 경우  를 더 스마트하게 가독성있게 출력하기  수행시간 측정 하기  …]]></description><link>https://didue.github.io/didue.github.io/TIL-console/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/TIL-console/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;#x26;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FRL3DB%2Fbtq8UeXRCxu%2FRwi4Bc26JFQtm7wCDnPPy0%2Fimg.gif&quot; alt=&quot;consolelog&quot;&gt;
-&lt;br/&gt;&lt;br/&gt;
-드림코딩 엘리님의 유튜브를 보고 기억하기위해 적어두는 TIL
-&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;h1 id=&quot;console-제대로-알고쓰기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#console-%EC%A0%9C%EB%8C%80%EB%A1%9C-%EC%95%8C%EA%B3%A0%EC%93%B0%EA%B8%B0&quot; aria-label=&quot;console 제대로 알고쓰기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;Console 제대로 알고쓰기&lt;/strong&gt;&lt;/h1&gt;
-&lt;br/&gt;
-&lt;p&gt;콘솔로그의 기본 로그레벨에 따른 &lt;code class=&quot;language-text&quot;&gt;method&lt;/code&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const cat = {type : &amp;#39;😺&amp;#39; name : &amp;#39;Ori&amp;#39;, owner : {name: &amp;#39;didue&amp;#39;}}
-console.log(&amp;#39;logging&amp;#39; , cat);
-
-//log level
-console.log();   //개발 출력 =&amp;gt; 배포시 삭제
-console.info();  //정보 출력 =&amp;gt; 배포시 삭제 
-console.warn();  //경보 
-console.error(); //에러! 시스템 에러&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;특정 조건이 일치&lt;/code&gt;할 때만 로그를 출력하고 싶을 경우&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//assert 
-console.assert(2 === 3, &amp;#39;not samae!&amp;#39;)
-console.assert(2 === 2, &amp;#39;same!&amp;#39;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Object&lt;/code&gt;를 더 스마트하게 가독성있게 출력하기&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//print object
-console.table(cat);
-console.dir(dog, {color: false, depth : 0});&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;수행시간 측정 하기&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;console.time(&amp;#39;for loop&amp;#39;);
-//working
-console.timeEnd(&amp;#39;for loop&amp;#39;);
-
-//output : for loop 0.053ms&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;스마트하게 &lt;code class=&quot;language-text&quot;&gt;카운팅&lt;/code&gt; 하기&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//old
-let count = 0;
-function a(){
-    count++;
-}
-a();
-a();
-a();
-console.log(count);
-count = 0;
-
-//new
-function a(){
-    console.count(&amp;#39;a function&amp;#39;);
-}
-a();
-a();
-a();
-console.countReset(&amp;#39;a function&amp;#39;);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;함수 어디에서 호출했는지 &lt;code class=&quot;language-text&quot;&gt;tracing&lt;/code&gt;하기&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function f1(){
-    f2();
-}
-function f2(){
-    f3();
-}
-function f3(){
-    console.trace();
-}
-f1();&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&quot;brbr&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#brbr&quot; aria-label=&quot;brbr permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;/h2&gt;
-&lt;h3 id=&quot;출처&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%B6%9C%EC%B2%98&quot; aria-label=&quot;출처 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;출처&lt;/h3&gt;
-&lt;p&gt;- MDN : Console &lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/API/Console&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://developer.mozilla.org/ko/docs/Web/API/Console&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;- Node.js : Console &lt;a href=&quot;https://nodejs.org/dist/latest-v14.x/docs/api/console.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://nodejs.org/dist/latest-v14.x/docs/api/console.html&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;- 드림코딩 유튜브 &lt;a href=&quot;https://youtu.be/KxsVV5jbJe4&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://youtu.be/KxsVV5jbJe4&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[(TIL#1) 모던Javascript - null 병합연산자 ??]]></title><description><![CDATA[null 병합 연산자 '??' 
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[(TIL#1) 모던Javascript - null 병합연산자 ??]]></title><description><![CDATA[null 병합 연산자 '??' 
 null
 
 null 병합 연산자 를 사용하면 짧은 문법으로 여러 연산자 중 그 값이 '확정'되어 있는 변수를 찾을 수 있습니다. 
@@ -443,7 +468,79 @@ public class TransCoord {
 좌표변환 코드를 보면 세상짧고 별거없어 보이는 코드이지만....
 &lt;p&gt;저 라이브러리와 코드를 찾기위해 몇번이고 구글을 떠돌던 며칠전의 저와 같은 모습을 하고 계실 또 다른 분들이 도움이 되셨기를...!🙋‍♀️&lt;/p&gt;
 &lt;p&gt;&lt;br/&gt;&lt;br/&gt;
-+) 이 글은 &lt;a href=&quot;https://fascinate-zsoo.tistory.com/24&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;여기(이전 블로그)&lt;/a&gt;에서 옮겨왔습니다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Java8 스트림(Stream)API - map/filter/distinct]]></title><description><![CDATA[Java8에서 선보인 Stream API를 근래 업무에서 너무 편하게 잘쓰고있어서 정리해보려 한다. 필요의 순간에 아주 유용하게 쓸 수 있는 API니 잘 알아두자! Java Stream 기존에 자바 Collection이나 Array의 요소를 가공할 …]]></description><link>https://didue.github.io/didue.github.io/java-stream-api/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/java-stream-api/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Java8에서 선보인 Stream API를 근래 업무에서 너무 편하게 잘쓰고있어서 정리해보려 한다.&lt;/p&gt;
++) 이 글은 &lt;a href=&quot;https://fascinate-zsoo.tistory.com/24&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;여기(이전 블로그)&lt;/a&gt;에서 옮겨왔습니다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[(TIL#2) Console 제대로 알고 쓰기 (with 드림코딩)]]></title><description><![CDATA[consolelog
+
+드림코딩 엘리님의 유튜브를 보고 기억하기위해 적어두는 TIL
+ Console 제대로 알고쓰기 콘솔로그의 기본 로그레벨에 따른   할 때만 로그를 출력하고 싶을 경우  를 더 스마트하게 가독성있게 출력하기  수행시간 측정 하기  …]]></description><link>https://didue.github.io/didue.github.io/TIL-console/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/TIL-console/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;#x26;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FRL3DB%2Fbtq8UeXRCxu%2FRwi4Bc26JFQtm7wCDnPPy0%2Fimg.gif&quot; alt=&quot;consolelog&quot;&gt;
+&lt;br/&gt;&lt;br/&gt;
+드림코딩 엘리님의 유튜브를 보고 기억하기위해 적어두는 TIL
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;h1 id=&quot;console-제대로-알고쓰기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#console-%EC%A0%9C%EB%8C%80%EB%A1%9C-%EC%95%8C%EA%B3%A0%EC%93%B0%EA%B8%B0&quot; aria-label=&quot;console 제대로 알고쓰기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;Console 제대로 알고쓰기&lt;/strong&gt;&lt;/h1&gt;
+&lt;br/&gt;
+&lt;p&gt;콘솔로그의 기본 로그레벨에 따른 &lt;code class=&quot;language-text&quot;&gt;method&lt;/code&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const cat = {type : &amp;#39;😺&amp;#39; name : &amp;#39;Ori&amp;#39;, owner : {name: &amp;#39;didue&amp;#39;}}
+console.log(&amp;#39;logging&amp;#39; , cat);
+
+//log level
+console.log();   //개발 출력 =&amp;gt; 배포시 삭제
+console.info();  //정보 출력 =&amp;gt; 배포시 삭제 
+console.warn();  //경보 
+console.error(); //에러! 시스템 에러&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;특정 조건이 일치&lt;/code&gt;할 때만 로그를 출력하고 싶을 경우&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//assert 
+console.assert(2 === 3, &amp;#39;not samae!&amp;#39;)
+console.assert(2 === 2, &amp;#39;same!&amp;#39;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Object&lt;/code&gt;를 더 스마트하게 가독성있게 출력하기&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//print object
+console.table(cat);
+console.dir(dog, {color: false, depth : 0});&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;수행시간 측정 하기&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;console.time(&amp;#39;for loop&amp;#39;);
+//working
+console.timeEnd(&amp;#39;for loop&amp;#39;);
+
+//output : for loop 0.053ms&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;스마트하게 &lt;code class=&quot;language-text&quot;&gt;카운팅&lt;/code&gt; 하기&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//old
+let count = 0;
+function a(){
+    count++;
+}
+a();
+a();
+a();
+console.log(count);
+count = 0;
+
+//new
+function a(){
+    console.count(&amp;#39;a function&amp;#39;);
+}
+a();
+a();
+a();
+console.countReset(&amp;#39;a function&amp;#39;);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;함수 어디에서 호출했는지 &lt;code class=&quot;language-text&quot;&gt;tracing&lt;/code&gt;하기&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function f1(){
+    f2();
+}
+function f2(){
+    f3();
+}
+function f3(){
+    console.trace();
+}
+f1();&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;brbr&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#brbr&quot; aria-label=&quot;brbr permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;출처&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%B6%9C%EC%B2%98&quot; aria-label=&quot;출처 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;출처&lt;/h3&gt;
+&lt;p&gt;- MDN : Console &lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/API/Console&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://developer.mozilla.org/ko/docs/Web/API/Console&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;- Node.js : Console &lt;a href=&quot;https://nodejs.org/dist/latest-v14.x/docs/api/console.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://nodejs.org/dist/latest-v14.x/docs/api/console.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;- 드림코딩 유튜브 &lt;a href=&quot;https://youtu.be/KxsVV5jbJe4&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://youtu.be/KxsVV5jbJe4&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Java8 스트림(Stream)API - map/filter/distinct]]></title><description><![CDATA[Java8에서 선보인 Stream API를 근래 업무에서 너무 편하게 잘쓰고있어서 정리해보려 한다. 필요의 순간에 아주 유용하게 쓸 수 있는 API니 잘 알아두자! Java Stream 기존에 자바 Collection이나 Array의 요소를 가공할 …]]></description><link>https://didue.github.io/didue.github.io/java-stream-api/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/java-stream-api/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Java8에서 선보인 Stream API를 근래 업무에서 너무 편하게 잘쓰고있어서 정리해보려 한다.&lt;/p&gt;
 &lt;p&gt;필요의 순간에 아주 유용하게 쓸 수 있는 API니 잘 알아두자!&lt;/p&gt;
 &lt;h2 id=&quot;java-stream&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#java-stream&quot; aria-label=&quot;java stream permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Java Stream&lt;/h2&gt;
 &lt;p&gt;기존에 자바 Collection이나 Array의 요소를 가공할 때는 &lt;code class=&quot;language-text&quot;&gt;loop(for, foreach)&lt;/code&gt;를 사용해서 요소를 골라내는 작업을 했다면, &lt;code class=&quot;language-text&quot;&gt;Stream&lt;/code&gt;은 &lt;strong&gt;람다형(함수형 인터페이스)&lt;/strong&gt; 으로 간단하게 요소를 처리할 수 있도록 한다&lt;/p&gt;
@@ -622,116 +719,4 @@ grape
 */&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;hr&gt;
 &lt;h3 id=&quot;2-문서&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%EB%AC%B8%EC%84%9C&quot; aria-label=&quot;2 문서 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;2. 문서&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Spread_syntax&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;MDN Documents &gt; 전개 구문&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[(Postgresql) Returning 구문 정보 리턴 받기]]></title><description><![CDATA[POSTGRESQL
- PostgreSQL에는  실행 후, affected rows 갯수 대신 정보를 반환해주는 구문이 있다. 그것이 바로  구문이다 사용방법은 아주아주 간단하다!!   문 뒤에  을 쓰면 실행 결과 ROWS를 반환한다.   이 흥미로…]]></description><link>https://didue.github.io/didue.github.io/postgresql-returning/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/postgresql-returning/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;#x26;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdfhdXW%2Fbtq665WfGR8%2FQX4BBDAwhiz52sGi08Ychk%2Fimg.png&quot; alt=&quot;POSTGRESQL&quot;&gt;
-&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;PostgreSQL에는 &lt;code class=&quot;language-text&quot;&gt;DML(INSERT, UPDATE, DELETE)&lt;/code&gt; 실행 후, affected rows 갯수 대신 정보를 반환해주는 구문이 있다.&lt;/p&gt;
-&lt;p&gt;그것이 바로 &lt;code class=&quot;language-text&quot;&gt;RETURNING&lt;/code&gt; 구문이다&lt;/p&gt;
-&lt;p&gt;사용방법은 &lt;strong&gt;아주아주&lt;/strong&gt; 간단하다!!  &lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;INSERT, UPDATE, DELETE&lt;/code&gt;문 뒤에 &lt;code class=&quot;language-text&quot;&gt;RETURNING *&lt;/code&gt; 을 쓰면 실행 결과 ROWS를 반환한다.  &lt;/p&gt;
-&lt;br/&gt;
-&lt;p&gt;이 흥미로운 문법을 아래의 활용 예제를 보면서 &lt;code class=&quot;language-text&quot;&gt;RETURNING&lt;/code&gt; 을 어떻게 쓸 수 있는지 자세히 살펴보자👩🤟&lt;/p&gt;
-&lt;br/&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;examples&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#examples&quot; aria-label=&quot;examples permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Examples&lt;/h2&gt;
-&lt;br/&gt;
-&lt;h3 id=&quot;활용1-select-key&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%99%9C%EC%9A%A91-select-key&quot; aria-label=&quot;활용1 select key permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;활용1. SELECT KEY&lt;/h3&gt;
-&lt;br/&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;spring&lt;/code&gt; 환경에서 우리는 &lt;code class=&quot;language-text&quot;&gt;insert(혹은 update)&lt;/code&gt;에서 SQL 실행 후 특정 값을 반환하고 싶을 때,
-대게의 경우에 mybatis(혹은 ibatis)의 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;selectKey&amp;gt;&lt;/code&gt;를 이용하여 이렇게 썼을 것이다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//old
-&amp;lt;insert&amp;gt;
-    INSERT INTO BOARD(BOARD_ID, TITLE, CONTENT)
-    VALUES(&amp;#39;A01&amp;#39;, &amp;#39;게시글 타이틀&amp;#39;, &amp;#39;게시글 내용&amp;#39;)
-    &amp;lt;selectKey keyProperty=&amp;quot;&amp;quot; resultType=&amp;quot;&amp;quot; order=&amp;quot;AFTER&amp;quot; &amp;gt;
-        SELECT BOARD_ID
-    &amp;lt;/selectKey&amp;gt;        
-&amp;lt;/insert&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;하지만 &lt;code class=&quot;language-text&quot;&gt;PostgreSQL&lt;/code&gt; 에서는 mybatis없이 이렇게도 쓸 수 있다!&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//new
-&amp;lt;insert&amp;gt;
-    INSERT INTO BOARD(BOARD_ID, TITLE, CONTENT)
-    VALUES(&amp;#39;A01&amp;#39;, &amp;#39;게시글 타이틀&amp;#39;, &amp;#39;게시글 내용&amp;#39;)
-    RETURNING BOARD_ID
-&amp;lt;/insert&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;확실히 &lt;code class=&quot;language-text&quot;&gt;insert&lt;/code&gt;안에 &lt;code class=&quot;language-text&quot;&gt;select&lt;/code&gt;가 들어가있는것 보다 가독성도 좋아보이고,&lt;br&gt;
-&lt;code class=&quot;language-text&quot;&gt;반환(RETURNING)&lt;/code&gt;한다는 의미와 해달 컬럼이 더 잘 전달된다.
-&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://jjalbot.com/media/2020/03/QPPbAIEl7V/SY9jdwKFd.jpeg&quot; alt=&quot;https://jjalbot.com/media/2020/03/QPPbAIEl7V/SY9jdwKFd.jpeg&quot;&gt;&lt;/p&gt;
-&lt;p&gt;편안~
-&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;h3 id=&quot;활용2-upsert&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%99%9C%EC%9A%A92-upsert&quot; aria-label=&quot;활용2 upsert permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;활용2. UPSERT&lt;/h3&gt;
-&lt;br/&gt;
-&lt;p&gt;두번째 활용 예는 &lt;code class=&quot;language-text&quot;&gt;UPSERT&lt;/code&gt;이다. &lt;br/&gt;
-많은 사용자들이 알듯이 PostgreSQL에는 오라클의 &lt;code class=&quot;language-text&quot;&gt;MERGE&lt;/code&gt;문이 없다 T-T&lt;br&gt;
-그래서 오라클의 그것과 같은 동작을 위해 우리는 PostgreSQL의 &lt;code class=&quot;language-text&quot;&gt;WITH&lt;/code&gt;를 활용할 수 있다.&lt;/p&gt;
-&lt;br/&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//update할 row가 없으면 insert 하는 upsert(merge)문
-
-WITH UPSERT AS (                            
-    UPDATE BOARD
-    SET TITLE = &amp;#39;게시글 타이틀 수정&amp;#39;
-        , CONTENT = &amp;#39;게시글 내용 수정&amp;#39;
-    WHERE BOARD_ID = &amp;#39;A01&amp;#39;
-    RETURNING *
-)
-INSERT INTO BOARD(
-    BOARD_ID
-    , TITLE
-    , CONTENT
-)
-SELECT
-    BOARD_ID
-    , TITLE
-    , CONTENT
-WHERE NOT EXISTS ( SELECT * FROM UPSERT )&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;PostgreSQL의 &lt;code class=&quot;language-text&quot;&gt;UPSERT&lt;/code&gt;문은 &lt;a href=&quot;https://didue.github.io/postgresql-upsert/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;여기&lt;/a&gt;에서 이전에 한번 다룬적이 있으니, 두 SQL을 비교해보면서 본인의 상황에 적절한 것을 골라서 써볼 수 있도록 하자!
-&lt;br/&gt;&lt;br/&gt;
-+) 이 글은 &lt;a href=&quot;https://fascinate-zsoo.tistory.com/24&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;여기(이전 블로그)&lt;/a&gt;에서 옮겨왔습니다.🙋‍♀️
-&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h4 id=&quot;참고&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%B0%B8%EA%B3%A0&quot; aria-label=&quot;참고 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;참고&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;PostgreSQL With : &lt;a href=&quot;https://www.postgresql.org/docs/9.4/queries-with.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://www.postgresql.org/docs/9.4/queries-with.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;PostgreSQL Insert Multi-Rows : &lt;a href=&quot;https://www.postgresqltutorial.com/postgresql-insert-multiple-rows/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://www.postgresqltutorial.com/postgresql-insert-multiple-rows/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Javascript/jQuery Selector에서 와일드카드 사용하기]]></title><description><![CDATA[또는 에서 을 사용할 때
-와일드카드를 이용하여 패턴으로 탐색하고 싶은 경우엔 아래와 같이 사용해보자!  ~로 시작하는 요소   ~로 끝나는 요소  ~를 포함하는 요소  아래 이미지는 를 사용하여 지난 프로젝트의 레거시 코드를 아주 조금 리팩토링했었던…]]></description><link>https://didue.github.io/didue.github.io/javascript-wildcard/</link><guid isPermaLink="false">https://didue.github.io/didue.github.io/javascript-wildcard/</guid><pubDate>Fri, 23 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;JavaScript&lt;/code&gt; 또는 &lt;code class=&quot;language-text&quot;&gt;jQuery&lt;/code&gt;에서 &lt;code class=&quot;language-text&quot;&gt;querySelectorAll()&lt;/code&gt;을 사용할 때&lt;br/&gt;
-와일드카드를 이용하여 &lt;em&gt;패턴으로 탐색&lt;/em&gt;하고 싶은 경우엔 아래와 같이 사용해보자!&lt;/p&gt;
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;~로 시작하는 요소&lt;/strong&gt;  &lt;code class=&quot;language-text&quot;&gt;^&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//JavaScript
-document.querySelectorAll(&amp;quot;[id^=&amp;#39;abc&amp;#39;]&amp;quot;);
-
-//jQuery
-$(&amp;quot;[id^=&amp;#39;abc&amp;#39;]&amp;quot;);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;~로 끝나는 요소&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;$&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//JavaScript
-document.querySelectorAll(&amp;quot;[id$=&amp;#39;abc&amp;#39;]&amp;quot;);
-
-//jQuery
-$(&amp;quot;[id$=&amp;#39;abc&amp;#39;]&amp;quot;);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;~를 포함하는 요소&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;*&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//JavaScript
-document.querySelectorAll(&amp;quot;[id*=&amp;#39;abc&amp;#39;]&amp;quot;);
-
-//jQuery
-$(&amp;quot;[id*=&amp;#39;abc&amp;#39;]&amp;quot;);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;br/&gt;
-&lt;hr&gt;
-&lt;br/&gt;
-&lt;p&gt;아래 이미지는 &lt;code class=&quot;language-text&quot;&gt;와일드카드&lt;/code&gt;를 사용하여 지난 프로젝트의 레거시 코드를 아주 조금 리팩토링했었던 코드이다. 👻&lt;/p&gt;
-&lt;br/&gt;
-&lt;p&gt;&lt;img src=&quot;https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;#x26;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FkVCvG%2FbtqE81F1Iox%2Fp3kVAWDJNMLRWXzQR5WxKk%2Fimg.png&quot; alt=&quot;null&quot;&gt;&lt;/p&gt;
-&lt;br/&gt;
-&lt;p&gt;50라인정도가 되는 하드코딩(?)스러운 코드를 단 8줄로 리팩토링했다. 개인적으론 라인이 줄어듦으로써 이전보다 가독성도 좋아졌다고 생각한다.
-&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;한가지 아쉬웠던것은 Element의 ID를 좀 더 상세한 패턴있게 작명했더라면 (Cnt라는 단어만으로는 다른데에서도 자주 사용되고 있기때문에 좋지못했다....)
-&lt;em&gt;어쩌면 한줄로도 가능하지않았을까&lt;/em&gt; 하는 약간의 아쉬움..이 좀 남는다🤔&lt;/p&gt;
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;hr/&gt;
-&lt;br/&gt;&lt;br/&gt;
-+) 이 글은 [여기(이전 블로그)](https://fascinate-zsoo.tistory.com/24)에서 옮겨왔습니다.🙋‍♀️
-&lt;br/&gt;&lt;br/&gt;</content:encoded></item></channel></rss>
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Spread_syntax&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;MDN Documents &gt; 전개 구문&lt;/a&gt;&lt;/p&gt;</content:encoded></item></channel></rss>
