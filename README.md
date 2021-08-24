@@ -1,2 +1,2 @@
 # didue.github.io
-didue's develop log
+didue's tech blog 
